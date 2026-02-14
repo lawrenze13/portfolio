@@ -97,6 +97,10 @@ body {
     padding-top: 10rem;
     padding-bottom: 6rem;
   }
+
+  .page.active {
+    pointer-events: auto;
+  }
 }
 
 /* Staggered content reveal */
