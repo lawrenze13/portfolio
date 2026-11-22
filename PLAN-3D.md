@@ -11,7 +11,7 @@ version of me guides the visitor, and asking a question lights up the closest wo
 |---|---|
 | World | Latent Space (concept A) |
 | Look | Concept C's palette: solder-mask black, PCB green, phosphor, copper |
-| Type | **No terminal or pixel fonts.** Pick one of three pairings in the prototype (below) |
+| Type | Bricolage Grotesque (display) + Hanken Grotesk (body). No terminal or pixel fonts |
 | Navigation | Five fixed stops; menu, ← →, 1–5, scroll (one stop per gesture), swipe, `#hash` |
 | Me | Low-poly 3D avatar (AI image-to-3D from my illustration, cleaned up in Blender), guiding between stops |
 | Ask | "Ask the guide": a question lights the nearest points with match scores; the camera flies to the best match |
@@ -20,6 +20,10 @@ version of me guides the visitor, and asking a question lights up the closest wo
 | Plain view | A new 2D site in the same identity (not the old site) |
 | Positioning | Full-Stack & AI Engineer |
 | Carry-over | Logo, avatar illustration and copy are raw material, nothing is locked |
+| Points | Every point in the cloud is real: projects, plus smaller things (features, integrations, scripts, notable PRs) with a one-line hover. Drafted from my repos and work, I review before publishing |
+| Texture | Subtle animated film grain over everything; no scanlines |
+| Pacing | Camera settles in about 1.5 s, slow orbit on Home (agreed after trying the prototype) |
+| Case studies | Written from short interviews with me, then edited by me |
 
 ## Look
 
@@ -36,11 +40,12 @@ version of me guides the visitor, and asking a question lights up the closest wo
 | Interface | `#F2C14E` | Interface cluster (solder gold) |
 | core | `#E9F0EA` | Core, guide (silkscreen white) |
 
-Type pairings to choose from (switcher in the prototype, bottom-right):
+Type: **Bricolage Grotesque** for display, **Hanken Grotesk** for body (chosen 22 Nov over
+Fraunces + Instrument Sans and Archivo Expanded).
 
-1. **Bricolage Grotesque + Hanken Grotesk**: characterful grotesk, warm.
-2. **Fraunces + Instrument Sans**: soft serif display against the tech palette.
-3. **Archivo Expanded + Archivo**: wide, engineered, technical without being mono.
+Light: points are round, softly twinkling sprites; halos are additive glow sprites; a light
+bloom pass (threshold 0.7) lifts only the brightest things. Film grain and a vignette sit
+over the scene.
 
 Labels, numbers and scores use the body font with tabular figures, not a monospace.
 
@@ -96,10 +101,12 @@ States: reduced motion (cut, don't fly; no orbit), no WebGL (plain view), deep l
 
 1. **Prototype** (`3d/`, Vite + React Three Fiber + drei + maath): real layout of the
    cloud, path, core and signal; capsule guide; camera flights; overlay panels; mock ask;
-   type switcher. Tune pacing and framing here.
-2. **Look**: bloom, point sprites, subtle grain, final type pairing, motion polish.
+   type switcher. Tune pacing and framing here. *Done.*
+2. **Look**: bloom, point sprites, subtle grain, final type pairing, motion polish. *Done:
+   remaining polish (sound, bundle splitting) moves to Ship.*
 3. **Avatar**: image-to-3D from the illustration, simplify, rig, idle / float / point.
-4. **Content**: three full case studies, short cards, About facts, final copy.
+4. **Content**: three full case studies (interviews), short cards, every filler point made
+   real (drafted, then reviewed), About facts, final copy.
 5. **Plain view**: the 2D site in the same identity; meta, Open Graph, `/llms.txt`,
    `resume.json`.
 6. **Ask the guide**, for real.
