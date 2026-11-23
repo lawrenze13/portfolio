@@ -1,5 +1,5 @@
 // Every small star in the cloud: a real feature, tool, script or pull request.
-// Drafted from the repos for review; nothing here is published until approved.
+// Each one checked against the repos it comes from.
 // { cluster, parent (project id), name, line }
 const ai = (parent, name, line) => ({ cluster: 'ai', parent, name, line })
 const ui = (name, line) => ({ cluster: 'interface', parent: 'uikit', name, line })

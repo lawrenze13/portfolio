@@ -368,7 +368,9 @@ function JobStar({ pos, on, active, label }) {
         </Label>
       )}
       <Label position={[0, 0.32, 0]} center distanceFactor={10} zIndexRange={LABEL_Z} style={{ pointerEvents: 'none' }}>
-        <div className={`point-label year${on ? ' lit' : active ? '' : ' dim'}`}>{label}</div>
+        {/* Years only on the Path: elsewhere the camera can pass close to a job,
+            and a label sized by distance would fill the screen. */}
+        <div className={`point-label year${on ? ' lit' : active ? '' : ' hidden'}`}>{label}</div>
       </Label>
     </group>
   )

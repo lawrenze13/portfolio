@@ -197,22 +197,13 @@ function CaseStudy({ p, onClose, onStep }) {
   return (
     <aside className="case" data-scroll aria-label={p.name}>
       <div className="case-head">
-        <span className="eyebrow" style={{ color: c.color }}>{c.label}{p.featured ? ' · Case study' : ''}</span>
+        <span className="eyebrow" style={{ color: c.color }}>{c.label}{p.story ? ' · Case study' : ''}</span>
         <button className="icon" type="button" onClick={onClose} aria-label="Close">✕</button>
       </div>
       <h2 className="display">{p.name}</h2>
       <p className="lead">{p.blurb}</p>
       <div className="tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
-      {p.story ? <Story s={p.story} color={c.color} /> : p.featured ? (
-        <>
-          <dl className="sections">
-            {['Problem', 'My role', 'Decisions', 'Result'].map((s) => <div key={s}><dt>{s}</dt><dd className="todo">To write.</dd></div>)}
-          </dl>
-          <div className="media todo">60-second walkthrough</div>
-        </>
-      ) : (
-        <p className="body muted">Short card: screenshots and links go here.</p>
-      )}
+      {p.story && <Story s={p.story} color={c.color} />}
       <div className="row">
         <button className="ghost" type="button" onClick={() => onStep(-1)}>← Previous</button>
         <button className="ghost" type="button" onClick={() => onStep(1)}>Next →</button>
@@ -237,7 +228,6 @@ function Story({ s, color }) {
         </dd></div>
         <div><dt>Stack</dt><dd>{s.stack}</dd></div>
       </dl>
-      <div className="media todo">{s.media || '60-second walkthrough (staged data only)'}</div>
       {s.link && <p className="body"><a className="link-out" href={s.link[1]} target="_blank" rel="noreferrer">{s.link[0]} ↗</a></p>}
     </>
   )

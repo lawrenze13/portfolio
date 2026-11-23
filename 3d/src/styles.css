@@ -87,7 +87,6 @@ h1.display { font-size: clamp(52px, 6.6vw, 104px); margin: 16px 0 20px; }
 h2.display { font-size: clamp(34px, 3.6vw, 56px); margin: 14px 0 18px; }
 .lead { font-size: 19px; line-height: 1.55; color: var(--text); opacity: 0.86; max-width: 46ch; }
 .body { font-size: 17px; line-height: 1.6; color: var(--muted); margin-bottom: 12px; max-width: 48ch; }
-.body.muted { margin-top: 16px; }
 .role { font-size: 16px; color: var(--text); margin-bottom: 12px; }
 .hint { font-size: 14px; color: var(--muted); margin-top: 14px; }
 .row, .commands { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
@@ -151,8 +150,6 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .kicker { margin-top: 16px; margin-bottom: 0; color: var(--text); }
 .link-out { color: var(--ai); text-decoration: none; font-size: 15px; }
 .link-out:hover { text-decoration: underline; }
-.todo { color: var(--muted); font-style: italic; }
-.media { margin-top: 18px; border: 1px dashed var(--line); border-radius: 12px; height: 150px; display: grid; place-items: center; font-size: 14px; }
 
 .stops { position: absolute; left: 40px; right: 40px; bottom: 24px; display: flex; align-items: center; gap: 22px; font-size: 13px; color: var(--muted); }
 .stops a { text-decoration: none; display: inline-flex; gap: 8px; letter-spacing: 0.06em; text-transform: uppercase; }

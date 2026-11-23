@@ -1,4 +1,4 @@
-// Content and tokens for the Latent Space prototype. Copy is a starting point.
+// The site's content and colour tokens: the 3D view, the plain view, llms.txt and resume.json all read it.
 
 export const SITE_URL = 'https://lawrenzem.space'
 // The plain view sits beside the 3D: /plain/ (rendered by src/plain/render.js).
@@ -66,7 +66,6 @@ export const PROJECTS = [
       ],
       result: [['3', 'AI learning apps'], ['< 6 mo', 'built end to end'], ['1', 'platform for accounts, payments and tutoring']],
       stack: 'Laravel, OpenAI, SpeechSuper, Stripe and Zoom.',
-      media: 'Diagram: how the three apps share one platform',
     } },
   { id: 'max', name: 'Max', cluster: 'ai',
     blurb: 'An AI team member for an MSP: an agent that works across chat channels with real tools.',
