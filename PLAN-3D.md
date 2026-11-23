@@ -15,7 +15,7 @@ version of me guides the visitor, and asking a question lights up the closest wo
 | Navigation | Five fixed stops; menu, ← →, 1–5, scroll (one stop per gesture), swipe, `#hash` |
 | Me | Low-poly 3D avatar (AI image-to-3D from my illustration, cleaned up in Blender), guiding between stops |
 | Ask | "Ask the guide": a question lights the nearest points with match scores; the camera flies to the best match |
-| Sound | Off by default, toggle |
+| Sound | On by default (starts at the first click, tap or key press), toggle; turning it off is remembered |
 | Write-ups | Full case study for the top 3, short card for the rest |
 | Plain view | A new 2D site in the same identity (not the old site) |
 | Positioning | Full-Stack & AI Engineer |
@@ -78,10 +78,20 @@ guardrails and failure handling, and cost/latency.
 
 ## Ask the guide
 
-- Prototype: local keyword-overlap scoring, labelled as a mock.
-- Real (phase 6): answers only from the case studies, cites the points it used, says
-  when it does not know. Needs a small serverless function (GitHub Pages cannot hold an
-  API key), a spending cap and rate limits.
+- Built (phase 6): matching by meaning in the visitor's browser, so nothing typed leaves
+  the page. A static embedding model (potion-base-8M, MIT, 4-bit, 3.9 MB in
+  `public/ask/`) loads the first time someone focuses the box. Each project's
+  description, tags, case-study passages and small stars are scored by similarity plus a
+  small bonus for the question's own words; the top three projects come back with the
+  star that matched, and those stars light up. Below 0.30 it says nothing is close; below
+  0.40 it says the match is loose. If the model cannot load, keyword matching stands in
+  and says so.
+- Checks: `npm run check-ask` runs 55 questions and 18 off-topic ones through the same
+  code (right project first 51, in the top three 55). Rebuild the model with
+  `npm run ask-model` (downloads once, at a pinned revision).
+- Later, optional: written answers from the case studies, citing the points used and
+  saying when it does not know. Needs a small serverless function (GitHub Pages cannot
+  hold an API key), a spending cap and rate limits.
 
 ## Interaction map
 
@@ -104,13 +114,24 @@ States: reduced motion (cut, don't fly; no orbit), no WebGL (plain view), deep l
    type switcher. Tune pacing and framing here. *Done.*
 2. **Look**: bloom, point sprites, subtle grain, final type pairing, motion polish. *Done:
    remaining polish (sound, bundle splitting) moves to Ship.*
-3. **Avatar**: image-to-3D from the illustration, simplify, rig, idle / float / point.
+3. **Guide**: a comet that flies to what each stop is about (replaced the avatar). *Done.*
 4. **Content**: three full case studies (interviews), short cards, every filler point made
    real (drafted, then reviewed), About facts, final copy.
 5. **Plain view**: the 2D site in the same identity; meta, Open Graph, `/llms.txt`,
-   `resume.json`.
-6. **Ask the guide**, for real.
-7. **Ship**: GitHub Pages deploy of the built site; decide paths (3D at `/`, plain at `/plain/`).
+   `resume.json`. *Done.*
+6. **Ask the guide**, for real: matching by meaning in the browser. *Done.*
+7. **Ship**: GitHub Pages deploy of the built site, 3D at `/`, plain at `/plain/`. *Built, not
+   deployed.* Sound is on by default (browsers start it at the first click, tap or key press;
+   turning it off is remembered) and made in the browser (Web Audio, no files): slow, quiet
+   chords (A, F#m, Dmaj7, Esus2, 14 s each) in a soft room with a faint high note now and then;
+   three soft notes from the A major triad on each stop change (rising forward, falling back;
+   Path steps silent); a chime when a case opens or Ask answers. Tried and dropped: a low drone
+   with noise (read as white noise) and a noise rush on each flight. The 3D is its own
+   chunk, so the text shows after 87 KB (gzip) while three.js (300 KB) arrives; if the 3D fails
+   to load, the text and menu keep working. The build carries `CNAME`, `.nojekyll` and a
+   `404.html`; the dev hooks are dev-only and absent from it. Left: the content review, then
+   the deploy method (recommended: the built files on a `gh-pages` branch with Pages switched
+   to it, so no workflow is needed).
 
 ## Fixes carried over from the audit of the old site
 
