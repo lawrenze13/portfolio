@@ -140,11 +140,12 @@ Pages serves the `gh-pages` branch as plain files, so a change goes live by buil
 committing the output there (no workflow needed):
 
 ```sh
-cd 3d && npm run build && npm run check-ask
-git worktree add --detach /tmp/site && cd /tmp/site && git checkout gh-pages
-git rm -rq . && cp -a ../path/to/3d/dist/. . && git add -A
-git commit -m "Publish the site" && git push   # Pages rebuilds in about a minute
-cd - && git worktree remove /tmp/site
+# from the repo root (~/portfolio)
+(cd 3d && npm run build && npm run check-ask)
+git worktree add ../portfolio-site gh-pages
+(cd ../portfolio-site && git pull -q && git rm -rq . && cp -a ../portfolio/3d/dist/. . && git add -A &&
+  git commit -m "Publish the site" && git push)   # Pages rebuilds in about a minute
+git worktree remove --force ../portfolio-site
 ```
 
 ## Fixes carried over from the audit of the old site
