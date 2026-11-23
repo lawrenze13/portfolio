@@ -1,0 +1,280 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Lawrenze Maranan",
+    "label": "Full-Stack & AI Engineer",
+    "email": "marklawrenzeb@gmail.com",
+    "url": "https://lawrenzem.space/",
+    "summary": "Eight years building software, and now the AI that runs inside it. I'm Lawrenze Maranan, a full-stack and AI engineer with eight years of building reliable, user-focused applications. Most of my backend work is in PHP frameworks; on the front end, modern JavaScript. Lately it is agents: orchestration, tools, evaluation, and keeping them honest in production.",
+    "location": {
+      "countryCode": "PH"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "lawrenze13",
+        "url": "https://github.com/lawrenze13"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "lawrenzem",
+        "url": "https://www.linkedin.com/in/lawrenzem/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "MultiPortal",
+      "position": "Full-Stack & AI Engineer",
+      "summary": "A multi-tenant cloud platform: product features end to end, the design system behind every screen, and the team's AI tools."
+    },
+    {
+      "name": "Hosted Network",
+      "position": "Full-Stack & AI Engineer",
+      "summary": "Internal tools for managed service providers: internet service qualification, telco integrations, and Max, an AI team member."
+    },
+    {
+      "name": "VIPTutors Co.",
+      "position": "Mid Full Stack Engineer",
+      "startDate": "2023",
+      "summary": "AI learning apps with OpenAI and SpeechSuper; Stripe payments and Zoom tutoring."
+    },
+    {
+      "name": "Cognitif Incorporated",
+      "position": "QA Engineer",
+      "startDate": "2021",
+      "summary": "End-to-end testing with Selenium and xUnit; GitLab CI/CD; Power BI reporting."
+    },
+    {
+      "name": "Wiflab",
+      "position": "Full Stack Developer",
+      "startDate": "2019",
+      "summary": "E-commerce, payroll and government systems in Laravel, CodeIgniter and PHP; Android and Flutter apps."
+    },
+    {
+      "name": "Freelance",
+      "position": "Full Stack Developer",
+      "startDate": "2018",
+      "summary": "A patient management system, a dental clinic platform, e-commerce and a therapy booking app."
+    },
+    {
+      "name": "Club Galaxy Boracay",
+      "position": "Graphic Designer",
+      "startDate": "2018",
+      "summary": "Social campaigns and promotional visuals for LED displays and print."
+    },
+    {
+      "name": "Bats. City Gov ITSD / IM Digital",
+      "position": "IT on-the-job training",
+      "startDate": "2018",
+      "summary": "PC diagnostics, LAN and VLAN set-up, and web development fundamentals."
+    }
+  ],
+  "projects": [
+    {
+      "name": "LawStack aiops",
+      "description": "An operator console that takes Jira tickets to pull requests, one AI agent per lane.",
+      "highlights": [
+        "100+ tickets taken to a pull request",
+        "< 1 hr typical ticket to PR, down from hours",
+        "Daily still the way we work"
+      ],
+      "keywords": [
+        "ai",
+        "agents",
+        "orchestration",
+        "llm",
+        "automation",
+        "jira",
+        "devtools"
+      ],
+      "url": "https://github.com/lawrenze13/lawstack-aiops"
+    },
+    {
+      "name": "VIPTutors AI Suite",
+      "description": "AI learning apps for speech practice, interview prep and writing, with payments and live tutoring.",
+      "highlights": [
+        "3 AI learning apps",
+        "< 6 mo built end to end",
+        "1 platform for accounts, payments and tutoring"
+      ],
+      "keywords": [
+        "ai",
+        "openai",
+        "speech",
+        "llm",
+        "education",
+        "stripe",
+        "zoom",
+        "laravel"
+      ],
+      "url": "https://lawrenzem.space/plain/#viptutors"
+    },
+    {
+      "name": "Max",
+      "description": "An AI team member for an MSP: an agent that works across chat channels with real tools.",
+      "keywords": [
+        "ai",
+        "agents",
+        "langgraph",
+        "mcp",
+        "tools",
+        "chat",
+        "assistant"
+      ],
+      "url": "https://lawrenzem.space/plain/#max"
+    },
+    {
+      "name": "Porto",
+      "description": "A company assistant that answers questions about the product and its docs.",
+      "keywords": [
+        "ai",
+        "assistant",
+        "rag",
+        "llm",
+        "chat",
+        "docs"
+      ],
+      "url": "https://lawrenzem.space/plain/#porto"
+    },
+    {
+      "name": "ORKESTRA",
+      "description": "A console for a team of single-purpose agents, starting with support triage, where a person approves anything risky.",
+      "keywords": [
+        "ai",
+        "agents",
+        "orchestration",
+        "automation",
+        "triage",
+        "guardrails",
+        "devtools"
+      ],
+      "url": "https://lawrenzem.space/plain/#orkestra"
+    },
+    {
+      "name": "MultiPortal",
+      "description": "A multi-tenant cloud platform where service providers run servers, networks and backups for their customers.",
+      "highlights": [
+        "One standard across the product",
+        "Any theme, light or dark",
+        "Every change checked automatically"
+      ],
+      "keywords": [
+        "cloud",
+        "multi-tenant",
+        "php",
+        "api",
+        "saas",
+        "backend",
+        "design system",
+        "ui kit"
+      ],
+      "url": "https://lawrenzem.space/plain/#multiportal"
+    },
+    {
+      "name": "Hosted Network Tools",
+      "description": "Tools for managed service providers: service qualification and telco integrations.",
+      "keywords": [
+        "msp",
+        "telco",
+        "api",
+        "vue",
+        "integrations",
+        "backend"
+      ],
+      "url": "https://lawrenzem.space/plain/#hostednetwork"
+    },
+    {
+      "name": "Freelance builds",
+      "description": "A patient management system, a dental clinic platform, e-commerce and a therapy booking app.",
+      "keywords": [
+        "laravel",
+        "php",
+        "payments",
+        "healthcare",
+        "ecommerce",
+        "booking"
+      ],
+      "url": "https://lawrenzem.space/plain/#freelance"
+    },
+    {
+      "name": "TestHub",
+      "description": "An end-to-end testing platform: environments, runs and evidence.",
+      "keywords": [
+        "testing",
+        "e2e",
+        "playwright",
+        "ci",
+        "qa"
+      ],
+      "url": "https://lawrenzem.space/plain/#testhub"
+    },
+    {
+      "name": "LawStack verdict",
+      "description": "Test results in one place: run history, flaky tests, screenshots and traces.",
+      "keywords": [
+        "testing",
+        "flaky",
+        "playwright",
+        "reporting",
+        "qa"
+      ],
+      "url": "https://lawrenzem.space/plain/#verdict"
+    },
+    {
+      "name": "UI kit",
+      "description": "A themeable design system: customer brand colours, dark mode and translations.",
+      "keywords": [
+        "design-system",
+        "ui",
+        "theming",
+        "dark-mode",
+        "translations",
+        "frontend"
+      ],
+      "url": "https://lawrenzem.space/plain/#uikit"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages and frameworks",
+      "keywords": [
+        "PHP",
+        "Laravel",
+        "Yii2",
+        "TypeScript",
+        "React",
+        "Vue.js",
+        "Node.js",
+        "Python",
+        "C#",
+        "MySQL",
+        "REST APIs"
+      ]
+    },
+    {
+      "name": "AI",
+      "keywords": [
+        "Agents",
+        "Claude Code",
+        "OpenAI",
+        "LangGraph",
+        "MCP",
+        "RAG"
+      ]
+    },
+    {
+      "name": "Quality",
+      "keywords": [
+        "Playwright",
+        "Selenium",
+        "xUnit",
+        "CI/CD"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://lawrenzem.space/resume.json",
+    "version": "v1.0.0"
+  }
+}

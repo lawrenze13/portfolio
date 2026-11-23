@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lawrenze Maranan · Full-Stack &amp; AI Engineer</title>
+  <meta name="description" content="Full-stack and AI engineer. Eight years building software, and now the AI that runs inside it.">
+  <link rel="canonical" href="https://lawrenzem.space/plain/">
+  <meta name="theme-color" content="#05110C">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="lawrenzem.space">
+  <meta property="og:title" content="Lawrenze Maranan · Full-Stack &amp; AI Engineer">
+  <meta property="og:description" content="Full-stack and AI engineer. Eight years building software, and now the AI that runs inside it.">
+  <meta property="og:url" content="https://lawrenzem.space/plain/">
+  <meta property="og:image" content="https://lawrenzem.space/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Lawrenze Maranan, Full-Stack &amp; AI Engineer: a field of stars, one for each thing built.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Lawrenze Maranan","jobTitle":"Full-Stack & AI Engineer","url":"https://lawrenzem.space/","email":"mailto:marklawrenzeb@gmail.com","sameAs":["https://github.com/lawrenze13","https://www.linkedin.com/in/lawrenzem/"],"address":{"@type":"PostalAddress","addressCountry":"PH"}}</script>
+  <style>
+:root {
+  --bg: #05110C; --surface: rgba(10, 28, 20, 0.72); --line: #1A3A2A; --text: #D6F5DE; --muted: #7FA88F;
+  --ai: #7CFFA4; --core: #E9F0EA; --on-accent: #04120A;
+  --display: 'Bricolage Grotesque', sans-serif; --body: 'Hanken Grotesk', sans-serif;
+  --wide: 1120px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: radial-gradient(ellipse 60% 40% at 85% 10%, rgba(124, 255, 164, 0.05), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 10% 55%, rgba(224, 138, 60, 0.04), transparent 70%), var(--bg);
+  background-attachment: fixed;
+  color: var(--text); font: 400 17px/1.65 var(--body); -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--ai); outline-offset: 3px; border-radius: 6px; }
+.sky { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.grain { position: fixed; inset: -60px; z-index: 30; pointer-events: none; opacity: 0.06; mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 0.8s steps(5) infinite; }
+@keyframes grain { 0% { transform: translate(0, 0); } 20% { transform: translate(-22px, 14px); } 40% { transform: translate(18px, -26px); }
+  60% { transform: translate(-12px, -8px); } 80% { transform: translate(26px, 20px); } 100% { transform: translate(0, 0); } }
+.skip { position: absolute; left: 16px; top: -80px; z-index: 40; background: var(--ai); color: var(--on-accent);
+  padding: 10px 16px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+/* Header */
+.top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 16px;
+  padding: 12px max(16px, calc((100% - var(--wide)) / 2)); background: rgba(5, 17, 12, 0.84);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 15px; text-decoration: none; margin-right: auto; }
+.brand img { height: 26px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
+.top nav { display: flex; gap: 2px; }
+.top nav a { color: var(--muted); text-decoration: none; font-size: 15px; padding: 6px 12px; border-radius: 999px; }
+.top nav a:hover { color: var(--text); background: rgba(124, 255, 164, 0.06); }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500;
+  text-decoration: none; white-space: nowrap; }
+.chip:hover { border-color: var(--muted); }
+
+/* Type */
+main { width: min(var(--wide), 100% - 32px); margin: 0 auto; }
+/* A halo in the background colour keeps the sky's specks out of the words. */
+main p, main h1, main h2, main h3, main h4, main dd, main li { text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg); }
+section { padding-top: 112px; scroll-margin-top: 40px; }
+.eyebrow { font: 600 12px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ai); margin-bottom: 16px; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; }
+h1 { font-size: clamp(56px, 10vw, 112px); margin-bottom: 24px; }
+h2 { font-size: clamp(34px, 5.2vw, 56px); margin-bottom: 20px; max-width: 16em; }
+h4 { font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.02em; }
+.lead { font-size: clamp(19px, 2.3vw, 23px); line-height: 1.5; max-width: 32em; }
+.body { color: var(--muted); max-width: 40em; margin-top: 14px; }
+
+/* Hero */
+.hero { padding-top: clamp(72px, 14vh, 140px); min-height: min(88vh, 860px); }
+.hero .body { margin-top: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 12px;
+  border: 1px solid var(--line); background: rgba(5, 17, 12, 0.6); font-weight: 600; text-decoration: none; }
+.btn:hover { border-color: var(--muted); }
+.btn.primary { background: var(--ai); border-color: var(--ai); color: var(--on-accent); }
+.btn.primary:hover { filter: brightness(1.08); }
+
+/* About */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 36px; }
+.facts div { border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; background: var(--surface); }
+.facts dt { font: 700 26px/1.15 var(--display); letter-spacing: -0.02em; }
+.facts dd { color: var(--muted); margin-top: 6px; }
+
+/* Path: a line of stars, oldest at the top */
+.path { list-style: none; position: relative; margin-top: 40px; padding-left: 44px; max-width: 46em; }
+.path::before { content: ''; position: absolute; left: 11px; top: 10px; bottom: 30px; width: 1px;
+  background: linear-gradient(to bottom, var(--line), rgba(214, 245, 222, 0.3) 70%, var(--ai)); }
+.job { position: relative; padding-bottom: 36px; }
+.job:last-child { padding-bottom: 0; }
+.star { position: absolute; left: -44px; top: 0; width: 23px; height: 23px; --s: #DCE6EE;
+  background: radial-gradient(circle, #fff 0 9%, var(--s) 15%, transparent 48%); }
+.star::before, .star::after { content: ''; position: absolute; left: 50%; top: 50%; background: linear-gradient(var(--dir), transparent, #fff, transparent); opacity: 0.55; }
+.star::before { --dir: to right; width: 23px; height: 1px; transform: translate(-50%, -50%); }
+.star::after { --dir: to bottom; width: 1px; height: 23px; transform: translate(-50%, -50%); }
+.job.now .star { --s: var(--ai); filter: drop-shadow(0 0 8px rgba(124, 255, 164, 0.7)); }
+.when { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); line-height: 23px; }
+.job.now .when { color: var(--ai); }
+.job h3 { font-size: clamp(24px, 3vw, 30px); letter-spacing: -0.02em; margin-top: 4px; }
+.role { margin-top: 4px; }
+.text { color: var(--muted); margin-top: 6px; }
+
+/* Work */
+.cluster { margin-top: 64px; }
+.cluster-head { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.cluster-head i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 12px var(--c); }
+.cluster-head h3 { font: 600 13px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c); }
+.cluster-head span { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+.case { margin-top: 20px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); padding: clamp(22px, 4vw, 44px); scroll-margin-top: 80px; }
+.case .eyebrow { color: var(--c); }
+.case h4 { font-size: clamp(30px, 4.4vw, 46px); }
+.case .lead { margin-top: 12px; }
+.kicker { color: var(--text); font-weight: 500; margin-top: 18px; max-width: 40em; }
+.results { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 16px 12px; margin-top: 28px; }
+.results li { border-left: 2px solid var(--c); padding: 2px 0 2px 16px; }
+.results strong { display: block; font: 700 clamp(30px, 4vw, 40px)/1.05 var(--display); letter-spacing: -0.02em; color: var(--c); }
+.results span { color: var(--muted); font-size: 15px; }
+.sections { margin-top: 32px; }
+.sections > div { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid var(--line); }
+.sections dt { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding-top: 4px; }
+.sections dd { max-width: 42em; }
+.decisions { padding-left: 20px; display: grid; gap: 10px; }
+.decisions b { font-weight: 600; }
+.link-out { display: inline-block; margin-top: 20px; color: var(--c); font-weight: 600; text-underline-offset: 4px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 20px; align-items: start; }
+.card { border: 1px solid var(--line); border-radius: 18px; background: var(--surface); padding: 22px 24px; scroll-margin-top: 80px;
+  display: flex; flex-direction: column; gap: 10px; }
+.card h4 { font-size: 24px; }
+.card p { color: var(--muted); }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+.more { margin-top: 8px; }
+.case .more { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 18px; }
+.more summary { cursor: pointer; color: var(--c); font-weight: 600; font-size: 15px; list-style: none; width: fit-content; }
+.more summary::-webkit-details-marker { display: none; }
+.more summary::before { content: '+'; display: inline-block; width: 1.1em; }
+.more[open] summary::before { content: '−'; }
+.more ul { list-style: none; display: grid; gap: 12px; margin-top: 14px; }
+.case .more ul { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px 28px; }
+.more li b { display: block; font-weight: 600; }
+.more li span { color: var(--muted); font-size: 15px; }
+
+/* Signal and footer */
+.print-only { display: none; }
+.signal { padding-bottom: 120px; }
+.email { color: var(--muted); margin-top: 14px; }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line);
+  padding: 24px max(16px, calc((100% - var(--wide)) / 2)); color: var(--muted); font-size: 14px; }
+footer .links { display: flex; gap: 18px; }
+footer a { text-underline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .top nav { display: none; }
+  section { padding-top: 80px; }
+  .sections > div { grid-template-columns: 1fr; gap: 6px; }
+  .path { padding-left: 38px; }
+  .star { left: -38px; }
+  .path::before { left: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .grain { animation: none; }
+}
+/* Printing gives a plain CV. */
+@media print {
+  :root { --bg: #fff; --text: #111; --muted: #444; --line: #ccc; --ai: #111; --surface: none; }
+  [style*='--c'] { --c: #111 !important; }
+  body { background: #fff; font-size: 10.5pt; }
+  main * { text-shadow: none !important; }
+  .sky, .grain, .top, .skip, .actions, footer .links { display: none !important; }
+  .hero { min-height: 0; padding-top: 0; }
+  .print-only { display: block; margin-top: 10px; color: #111; }
+  section { padding-top: 28px; }
+  h1 { font-size: 34pt; }
+  h2 { font-size: 20pt; }
+  .case, .card, .facts div, .job { break-inside: avoid; }
+  .star { filter: none !important; }
+  .brand img { filter: none; }
+}
+</style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <svg class="sky" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><circle cx="105.3" cy="3.2" r="0.67" fill="#CFE0FF" opacity="0.34"/><circle cx="608.9" cy="491.5" r="0.37" fill="#CFE0FF" opacity="0.16"/><circle cx="966.8" cy="654.3" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="990.3" cy="885.4" r="0.31" fill="#FFFFFF" opacity="0.12"/><circle cx="775.1" cy="904.3" r="0.61" fill="#FFFFFF" opacity="0.30"/><circle cx="686.7" cy="437.1" r="0.78" fill="#FFE9C7" opacity="0.41"/><circle cx="740.4" cy="516.6" r="0.32" fill="#FFFFFF" opacity="0.13"/><circle cx="926.8" cy="615.9" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="818.7" cy="253.7" r="0.30" fill="#CFE0FF" opacity="0.12"/><circle cx="680.4" cy="143.4" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="542.1" cy="712.6" r="0.32" fill="#FFFFFF" opacity="0.13"/><circle cx="337.9" cy="217.5" r="0.30" fill="#DCE6EE" opacity="0.12"/><circle cx="130.7" cy="844.3" r="0.34" fill="#DCE6EE" opacity="0.15"/><circle cx="240.0" cy="91.3" r="0.46" fill="#FFFFFF" opacity="0.22"/><circle cx="265.0" cy="452.1" r="0.39" fill="#FFFFFF" opacity="0.17"/><circle cx="183.0" cy="54.3" r="0.72" fill="#DCE6EE" opacity="0.37"/><circle cx="16.9" cy="242.4" r="0.50" fill="#FFFFFF" opacity="0.24"/><circle cx="789.1" cy="973.8" r="0.54" fill="#FFE9C7" opacity="0.27"/><circle cx="722.8" cy="30.0" r="0.70" fill="#FFFFFF" opacity="0.36"/><circle cx="835.2" cy="939.2" r="0.41" fill="#FFFFFF" opacity="0.19"/><circle cx="993.7" cy="91.2" r="0.54" fill="#FFE9C7" opacity="0.27"/><circle cx="708.3" cy="612.9" r="0.32" fill="#FFFFFF" opacity="0.13"/><circle cx="801.9" cy="636.5" r="0.68" fill="#FFE9C7" opacity="0.35"/><circle cx="136.2" cy="191.2" r="0.69" fill="#FFFFFF" opacity="0.35"/><circle cx="347.1" cy="555.7" r="0.72" fill="#FFFFFF" opacity="0.37"/><circle cx="110.2" cy="750.4" r="0.33" fill="#FFFFFF" opacity="0.14"/><circle cx="275.3" cy="758.4" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="130.1" cy="249.1" r="0.63" fill="#CFE0FF" opacity="0.32"/><circle cx="29.2" cy="361.3" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="423.9" cy="838.0" r="0.41" fill="#FFE9C7" opacity="0.19"/><circle cx="732.2" cy="670.2" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="540.1" cy="226.6" r="0.57" fill="#CFE0FF" opacity="0.28"/><circle cx="306.9" cy="328.9" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="286.1" cy="734.5" r="0.33" fill="#FFFFFF" opacity="0.14"/><circle cx="606.9" cy="872.1" r="0.31" fill="#FFFFFF" opacity="0.12"/><circle cx="945.0" cy="206.8" r="0.74" fill="#FFFFFF" opacity="0.38"/><circle cx="570.1" cy="776.7" r="0.31" fill="#FFFFFF" opacity="0.13"/><circle cx="380.5" cy="216.6" r="0.39" fill="#CFE0FF" opacity="0.17"/><circle cx="643.0" cy="940.7" r="0.41" fill="#FFFFFF" opacity="0.19"/><circle cx="422.7" cy="746.8" r="0.43" fill="#FFFFFF" opacity="0.20"/><circle cx="630.8" cy="949.0" r="0.35" fill="#DCE6EE" opacity="0.15"/><circle cx="303.7" cy="31.8" r="0.30" fill="#DCE6EE" opacity="0.12"/><circle cx="652.3" cy="175.0" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="886.6" cy="796.9" r="0.99" fill="#FFFFFF" opacity="0.53"/><circle cx="764.3" cy="4.0" r="0.49" fill="#FFFFFF" opacity="0.23"/><circle cx="451.6" cy="372.9" r="0.36" fill="#FFE9C7" opacity="0.15"/><circle cx="320.0" cy="256.9" r="0.99" fill="#FFFFFF" opacity="0.54"/><circle cx="243.8" cy="846.9" r="0.30" fill="#DCE6EE" opacity="0.12"/><circle cx="723.8" cy="875.1" r="0.60" fill="#DCE6EE" opacity="0.30"/><circle cx="945.9" cy="419.3" r="0.80" fill="#DCE6EE" opacity="0.42"/><circle cx="697.7" cy="73.0" r="0.31" fill="#DCE6EE" opacity="0.13"/><circle cx="67.9" cy="622.6" r="0.38" fill="#FFFFFF" opacity="0.17"/><circle cx="426.7" cy="366.1" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="487.7" cy="313.5" r="0.30" fill="#CFE0FF" opacity="0.12"/><circle cx="662.4" cy="443.3" r="0.31" fill="#DCE6EE" opacity="0.13"/><circle cx="924.2" cy="832.8" r="0.75" fill="#FFFFFF" opacity="0.39"/><circle cx="902.1" cy="429.7" r="0.93" fill="#FFE9C7" opacity="0.50"/><circle cx="318.9" cy="197.5" r="0.73" fill="#FFFFFF" opacity="0.38"/><circle cx="976.0" cy="118.2" r="0.64" fill="#CFE0FF" opacity="0.33"/><circle cx="583.8" cy="43.0" r="0.31" fill="#DCE6EE" opacity="0.12"/><circle cx="92.2" cy="917.3" r="0.71" fill="#FFFFFF" opacity="0.37"/><circle cx="689.5" cy="89.6" r="0.41" fill="#DCE6EE" opacity="0.18"/><circle cx="288.8" cy="835.4" r="0.75" fill="#DCE6EE" opacity="0.39"/><circle cx="692.3" cy="807.9" r="0.83" fill="#FFFFFF" opacity="0.44"/><circle cx="761.0" cy="555.4" r="0.73" fill="#FFE9C7" opacity="0.38"/><circle cx="335.0" cy="917.8" r="0.30" fill="#CFE0FF" opacity="0.12"/><circle cx="18.4" cy="436.8" r="0.89" fill="#FFFFFF" opacity="0.47"/><circle cx="807.2" cy="837.8" r="0.72" fill="#FFFFFF" opacity="0.37"/><circle cx="930.4" cy="689.4" r="0.91" fill="#FFFFFF" opacity="0.49"/><circle cx="258.9" cy="491.4" r="0.33" fill="#CFE0FF" opacity="0.14"/><circle cx="949.7" cy="145.4" r="0.61" fill="#DCE6EE" opacity="0.31"/><circle cx="938.2" cy="785.5" r="0.33" fill="#CFE0FF" opacity="0.14"/><circle cx="517.6" cy="78.7" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="541.3" cy="718.4" r="0.61" fill="#DCE6EE" opacity="0.31"/><circle cx="146.9" cy="599.8" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="153.2" cy="450.2" r="0.30" fill="#DCE6EE" opacity="0.12"/><circle cx="711.8" cy="207.8" r="0.33" fill="#FFFFFF" opacity="0.14"/><circle cx="811.4" cy="910.5" r="0.84" fill="#CFE0FF" opacity="0.44"/><circle cx="49.3" cy="777.2" r="0.76" fill="#CFE0FF" opacity="0.39"/><circle cx="985.8" cy="735.3" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="362.6" cy="145.9" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="583.0" cy="738.6" r="0.48" fill="#FFFFFF" opacity="0.23"/><circle cx="825.3" cy="1.2" r="0.95" fill="#FFE9C7" opacity="0.51"/><circle cx="912.8" cy="118.6" r="0.57" fill="#DCE6EE" opacity="0.28"/><circle cx="299.1" cy="452.5" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="309.1" cy="493.1" r="0.35" fill="#FFFFFF" opacity="0.15"/><circle cx="77.3" cy="853.5" r="0.30" fill="#CFE0FF" opacity="0.12"/><circle cx="857.7" cy="96.8" r="0.44" fill="#CFE0FF" opacity="0.21"/><circle cx="452.7" cy="139.9" r="0.31" fill="#FFFFFF" opacity="0.12"/><circle cx="851.3" cy="839.8" r="0.33" fill="#CFE0FF" opacity="0.14"/><circle cx="184.3" cy="582.2" r="0.41" fill="#FFFFFF" opacity="0.19"/><circle cx="113.8" cy="292.8" r="0.31" fill="#FFFFFF" opacity="0.13"/><circle cx="655.2" cy="563.6" r="0.65" fill="#FFE9C7" opacity="0.33"/><circle cx="852.3" cy="28.8" r="0.50" fill="#FFE9C7" opacity="0.24"/><circle cx="755.4" cy="317.7" r="0.32" fill="#FFFFFF" opacity="0.13"/><circle cx="844.6" cy="385.8" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="146.8" cy="923.7" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="823.7" cy="303.6" r="0.30" fill="#CFE0FF" opacity="0.12"/><circle cx="526.5" cy="7.4" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="610.2" cy="665.9" r="0.36" fill="#FFFFFF" opacity="0.16"/><circle cx="435.0" cy="142.8" r="0.90" fill="#CFE0FF" opacity="0.48"/><circle cx="166.4" cy="797.3" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="15.7" cy="246.3" r="0.55" fill="#FFE9C7" opacity="0.27"/><circle cx="26.6" cy="617.6" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="51.8" cy="279.5" r="0.39" fill="#FFFFFF" opacity="0.18"/><circle cx="527.7" cy="565.5" r="0.34" fill="#CFE0FF" opacity="0.15"/><circle cx="285.8" cy="723.6" r="0.44" fill="#CFE0FF" opacity="0.21"/><circle cx="828.9" cy="636.2" r="0.56" fill="#FFFFFF" opacity="0.28"/><circle cx="458.7" cy="206.1" r="0.40" fill="#FFFFFF" opacity="0.18"/><circle cx="959.5" cy="420.4" r="0.75" fill="#DCE6EE" opacity="0.39"/><circle cx="173.9" cy="870.8" r="0.48" fill="#FFFFFF" opacity="0.23"/><circle cx="205.4" cy="820.7" r="0.30" fill="#DCE6EE" opacity="0.12"/><circle cx="753.4" cy="501.7" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="910.8" cy="785.3" r="0.73" fill="#FFFFFF" opacity="0.38"/><circle cx="743.4" cy="264.2" r="0.31" fill="#DCE6EE" opacity="0.13"/><circle cx="890.0" cy="784.1" r="0.33" fill="#DCE6EE" opacity="0.14"/><circle cx="854.1" cy="831.1" r="0.52" fill="#FFFFFF" opacity="0.25"/><circle cx="384.3" cy="559.3" r="0.34" fill="#FFFFFF" opacity="0.14"/><circle cx="875.3" cy="154.6" r="0.30" fill="#CFE0FF" opacity="0.12"/><circle cx="721.5" cy="877.8" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="946.9" cy="6.3" r="0.69" fill="#CFE0FF" opacity="0.35"/><circle cx="782.5" cy="460.0" r="0.90" fill="#FFFFFF" opacity="0.48"/><circle cx="940.1" cy="28.7" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="840.3" cy="977.6" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="962.2" cy="151.9" r="0.30" fill="#DCE6EE" opacity="0.12"/><circle cx="679.8" cy="551.3" r="0.37" fill="#FFFFFF" opacity="0.16"/><circle cx="378.1" cy="734.7" r="0.34" fill="#FFFFFF" opacity="0.14"/><circle cx="699.9" cy="312.6" r="0.40" fill="#FFFFFF" opacity="0.18"/><circle cx="364.5" cy="886.4" r="0.49" fill="#FFFFFF" opacity="0.24"/><circle cx="138.6" cy="246.2" r="0.38" fill="#DCE6EE" opacity="0.17"/><circle cx="732.8" cy="644.0" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="86.5" cy="55.6" r="1.04" fill="#CFE0FF" opacity="0.57"/><circle cx="753.2" cy="921.6" r="0.36" fill="#FFFFFF" opacity="0.16"/><circle cx="882.3" cy="103.6" r="0.89" fill="#FFFFFF" opacity="0.48"/><circle cx="7.8" cy="391.1" r="0.31" fill="#FFE9C7" opacity="0.13"/><circle cx="714.6" cy="256.5" r="0.30" fill="#DCE6EE" opacity="0.12"/><circle cx="721.3" cy="193.9" r="0.30" fill="#CFE0FF" opacity="0.12"/><circle cx="529.1" cy="870.4" r="0.58" fill="#CFE0FF" opacity="0.29"/><circle cx="276.6" cy="441.1" r="0.64" fill="#DCE6EE" opacity="0.33"/><circle cx="858.5" cy="349.1" r="0.52" fill="#FFFFFF" opacity="0.25"/><circle cx="246.1" cy="59.3" r="0.39" fill="#DCE6EE" opacity="0.17"/><circle cx="996.5" cy="57.9" r="0.55" fill="#FFFFFF" opacity="0.27"/><circle cx="552.9" cy="888.6" r="0.90" fill="#FFFFFF" opacity="0.48"/><circle cx="50.7" cy="629.9" r="0.56" fill="#FFFFFF" opacity="0.28"/><circle cx="438.4" cy="788.6" r="0.78" fill="#FFFFFF" opacity="0.41"/><circle cx="605.8" cy="208.6" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="909.5" cy="126.0" r="0.37" fill="#FFE9C7" opacity="0.16"/><circle cx="327.4" cy="692.8" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="146.4" cy="8.8" r="0.71" fill="#FFFFFF" opacity="0.37"/><circle cx="508.4" cy="806.6" r="0.31" fill="#FFFFFF" opacity="0.12"/><circle cx="464.0" cy="459.9" r="0.97" fill="#FFFFFF" opacity="0.52"/><circle cx="255.8" cy="505.9" r="0.31" fill="#FFFFFF" opacity="0.12"/><circle cx="545.8" cy="958.1" r="0.38" fill="#DCE6EE" opacity="0.17"/><circle cx="508.7" cy="539.4" r="0.86" fill="#DCE6EE" opacity="0.46"/><circle cx="161.0" cy="191.6" r="0.69" fill="#FFE9C7" opacity="0.35"/><circle cx="116.4" cy="753.2" r="0.33" fill="#FFFFFF" opacity="0.14"/><circle cx="781.7" cy="135.0" r="0.33" fill="#CFE0FF" opacity="0.14"/><circle cx="911.9" cy="960.1" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="928.6" cy="486.0" r="0.46" fill="#CFE0FF" opacity="0.22"/><circle cx="855.3" cy="253.5" r="0.48" fill="#FFFFFF" opacity="0.23"/><circle cx="339.6" cy="906.6" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="799.7" cy="713.9" r="0.58" fill="#FFFFFF" opacity="0.29"/><circle cx="400.3" cy="247.4" r="0.46" fill="#CFE0FF" opacity="0.22"/><circle cx="418.9" cy="245.7" r="0.30" fill="#DCE6EE" opacity="0.12"/><circle cx="747.6" cy="792.8" r="0.30" fill="#FFE9C7" opacity="0.12"/><circle cx="487.6" cy="552.6" r="0.30" fill="#FFFFFF" opacity="0.12"/><circle cx="26.2" cy="766.5" r="0.32" fill="#FFFFFF" opacity="0.13"/><circle cx="508.6" cy="18.8" r="0.36" fill="#CFE0FF" opacity="0.15"/><circle cx="931.2" cy="594.9" r="0.38" fill="#FFFFFF" opacity="0.17"/><circle cx="256.6" cy="978.5" r="0.72" fill="#CFE0FF" opacity="0.37"/></svg>
+  <header class="top">
+    <a class="brand" href="#top"><img src="../logo.png" alt="" height="26"><span>lawrenzem.space</span></a>
+    <nav aria-label="Sections"><a href="#about">About</a><a href="#path">Path</a><a href="#work">Work</a><a href="#signal">Signal</a></nav>
+    <a class="chip" href="../">View in 3D</a>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="eyebrow">Full-Stack &amp; AI Engineer</p>
+      <h1>Lawrenze<br>Maranan</h1>
+      <p class="lead">Eight years building software, and now the AI that runs inside it.</p>
+      <p class="body">Remote, from the Philippines. Open to full-stack and AI engineering roles.</p>
+      <div class="actions">
+      <a class="btn primary" href="mailto:marklawrenzeb@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/lawrenze13" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/lawrenzem/" rel="noopener">LinkedIn</a>
+    </div>
+      <p class="print-only">marklawrenzeb@gmail.com · github.com/lawrenze13 · linkedin.com/in/lawrenzem</p>
+    </section>
+
+    <section id="about">
+      <p class="eyebrow">02 · About</p>
+      <h2>I build software, and the AI inside it.</h2>
+      <p class="body">I&#39;m Lawrenze Maranan, a full-stack and AI engineer with eight years of building reliable, user-focused applications.</p>
+      <p class="body">Most of my backend work is in PHP frameworks; on the front end, modern JavaScript. Lately it is agents: orchestration, tools, evaluation, and keeping them honest in production.</p>
+      <dl class="facts"><div><dt>8+</dt><dd>years shipping</dd></div><div><dt>PHP · TypeScript · Python</dt><dd>day to day</dd></div><div><dt>Agents</dt><dd>in production</dd></div></dl>
+    </section>
+
+    <section id="path">
+      <p class="eyebrow">03 · Path</p>
+      <h2>From 2018 to now</h2>
+      <ol class="path">
+      <li class="job">
+        <span class="star" aria-hidden="true"></span>
+        <p class="when">2018</p>
+        <h3>Bats. City Gov ITSD / IM Digital</h3>
+        <p class="role">IT on-the-job training</p>
+        <p class="text">PC diagnostics, LAN and VLAN set-up, and web development fundamentals.</p>
+      </li>
+      <li class="job">
+        <span class="star" aria-hidden="true"></span>
+        <p class="when">2018</p>
+        <h3>Club Galaxy Boracay</h3>
+        <p class="role">Graphic Designer</p>
+        <p class="text">Social campaigns and promotional visuals for LED displays and print.</p>
+      </li>
+      <li class="job">
+        <span class="star" aria-hidden="true"></span>
+        <p class="when">2018</p>
+        <h3>Freelance</h3>
+        <p class="role">Full Stack Developer</p>
+        <p class="text">A patient management system, a dental clinic platform, e-commerce and a therapy booking app.</p>
+      </li>
+      <li class="job">
+        <span class="star" aria-hidden="true"></span>
+        <p class="when">2019</p>
+        <h3>Wiflab</h3>
+        <p class="role">Full Stack Developer</p>
+        <p class="text">E-commerce, payroll and government systems in Laravel, CodeIgniter and PHP; Android and Flutter apps.</p>
+      </li>
+      <li class="job">
+        <span class="star" aria-hidden="true"></span>
+        <p class="when">2021</p>
+        <h3>Cognitif Incorporated</h3>
+        <p class="role">QA Engineer</p>
+        <p class="text">End-to-end testing with Selenium and xUnit; GitLab CI/CD; Power BI reporting.</p>
+      </li>
+      <li class="job">
+        <span class="star" aria-hidden="true"></span>
+        <p class="when">2023</p>
+        <h3>VIPTutors Co.</h3>
+        <p class="role">Mid Full Stack Engineer</p>
+        <p class="text">AI learning apps with OpenAI and SpeechSuper; Stripe payments and Zoom tutoring.</p>
+      </li>
+      <li class="job now">
+        <span class="star" aria-hidden="true"></span>
+        <p class="when">Now</p>
+        <h3>Hosted Network</h3>
+        <p class="role">Full-Stack &amp; AI Engineer</p>
+        <p class="text">Internal tools for managed service providers: internet service qualification, telco integrations, and Max, an AI team member.</p>
+      </li>
+      <li class="job now">
+        <span class="star" aria-hidden="true"></span>
+        <p class="when">Now</p>
+        <h3>MultiPortal</h3>
+        <p class="role">Full-Stack &amp; AI Engineer</p>
+        <p class="text">A multi-tenant cloud platform: product features end to end, the design system behind every screen, and the team&#39;s AI tools.</p>
+      </li>
+      </ol>
+    </section>
+
+    <section id="work">
+      <p class="eyebrow">04 · Work</p>
+      <h2>Eleven things I&#39;ve built</h2>
+      <p class="body">Three in depth, the rest in short. Open any of them for the smaller things inside.</p>
+      <div class="cluster" style="--c:#7CFFA4">
+      <div class="cluster-head"><i aria-hidden="true"></i><h3>AI &amp; agents</h3><span>5</span></div>
+      <article class="case" id="aiops">
+        <p class="eyebrow">AI &amp; agents · Case study</p>
+        <h4>LawStack aiops</h4>
+        <p class="lead">An operator console that takes Jira tickets to pull requests, one AI agent per lane.</p>
+        
+        <ul class="results"><li><strong>100+</strong><span>tickets taken to a pull request</span></li><li><strong>&lt; 1 hr</strong><span>typical ticket to PR, down from hours</span></li><li><strong>Daily</strong><span>still the way we work</span></li></ul>
+        <dl class="sections">
+          <div><dt>Problem</dt><dd>Every ticket went the same way: read it, branch, think it through, plan, review, build, test, open the pull request, update Jira. Most of those hours went on the same steps again, not on the hard part.</dd></div>
+          <div><dt>My role</dt><dd>I designed and built it alone, 128 commits in its first three weeks from April 2026. A small team of us still takes our tickets through it.</dd></div>
+          <div><dt>How it works</dt><dd>Each Jira ticket moves across a board of lanes: brainstorm, plan, review, pull request, implement, test. Every lane is a Claude Code agent with its own prompt and model, working in the ticket&#39;s own git worktree; its output streams live and is kept as a record. The thinking lanes run on Sonnet. Implementation runs on Opus, because that is where a weaker model thrashes.</dd></div>
+          <div><dt>Decisions</dt><dd><ol class="decisions"><li><b>No code before a person says yes.</b> An agent writes code only after someone approves its brainstorm and plan. Approving commits both to the branch, opens a draft pull request and comments on the Jira ticket.</li><li><b>One ticket, one worktree.</b> Each ticket gets its own branch and working copy, so several can be in flight without stepping on each other.</li><li><b>Agents check agents.</b> Review and security agents go over the work, then the CI review verdict is read back from the pull request: a pass moves the ticket to done, a blocker sends it back to implement. This catches most mistakes before a person sees the pull request.</li><li><b>A budget on every run.</b> Each agent run has a cost warning and a hard stop (US$10 and US$30 for implementation), and the dashboard shows spend and throughput.</li><li><b>Steps that resume.</b> Approval is a chain of recorded steps (commit, push, open the pull request, notify Jira), so a failure picks up where it stopped instead of starting again.</li></ol></dd></div>
+          <div><dt>Stack</dt><dd>Next.js 15, TypeScript, SQLite with Drizzle, Auth.js with Google sign-in, the Claude Code CLI, server-sent events, systemd and Caddy, and a one-command installer.</dd></div>
+        </dl>
+        <p><a class="link-out" href="https://github.com/lawrenze13/lawstack-aiops" rel="noopener">github.com/lawrenze13/lawstack-aiops ↗</a></p>
+        <details class="more">
+          <summary>9 more things in LawStack aiops</summary>
+          <ul><li><b>Cost kill switch</b><span>Warns at US$5 and stops a run at US$15, with higher caps for implementation.</span></li><li><b>Mid-run questions</b><span>Pauses an agent when it is stuck, then resumes it from your answer in chat.</span></li><li><b>Specialist reviewers</b><span>Adds security, performance and deploy-check agents beside the plan reviewer.</span></li><li><b>QA fix loop</b><span>Turns QA&#39;s Jira comments into new requirements and starts a fresh fix cycle.</span></li><li><b>Script test runner</b><span>Runs the Playwright lane as a plain script, so a deterministic job costs no tokens.</span></li><li><b>One-line installer</b><span>Installs the console on a laptop, behind your own proxy, or on a VPS with TLS.</span></li><li><b>Test-plan judge</b><span>Asks a model which extra test suites a change needs; it can add suites, never drop them.</span></li><li><b>Coverage brief</b><span>Hands the test-writing agent the exact coverage gaps instead of a blank page.</span></li><li><b>Support desk assists</b><span>Drafts replies, tags and summarises support tickets, and never sends anything itself.</span></li></ul>
+        </details>
+      </article>
+      <article class="case" id="viptutors">
+        <p class="eyebrow">AI &amp; agents · Case study</p>
+        <h4>VIPTutors AI Suite</h4>
+        <p class="lead">AI learning apps for speech practice, interview prep and writing, with payments and live tutoring.</p>
+        
+        <ul class="results"><li><strong>3</strong><span>AI learning apps</span></li><li><strong>&lt; 6 mo</strong><span>built end to end</span></li><li><strong>1</strong><span>platform for accounts, payments and tutoring</span></li></ul>
+        <dl class="sections">
+          <div><dt>Problem</dt><dd>Students only got feedback in their paid lessons. Between lessons they practised alone, with no one to tell them what to fix.</dd></div>
+          <div><dt>My role</dt><dd>I built it end to end, mostly on my own, in under six months in 2023: the AI apps and the platform around them.</dd></div>
+          <div><dt>How it works</dt><dd>Three apps on one platform: speech practice, interview prep and writing. A specialist service, SpeechSuper, scores the speech; OpenAI then turns the scores and the transcript into feedback a learner can act on, and the next thing to practise.</dd></div>
+          <div><dt>Decisions</dt><dd><ol class="decisions"><li><b>One shared platform.</b> Every app shares one set of accounts, Stripe payments and Zoom tutoring, so a new app meant building only the learning part.</li><li><b>Score first, then explain.</b> Scoring is left to a service built for it, and the language model only explains the result, so the feedback rests on a measurement rather than a guess.</li><li><b>Practice that leads to a tutor.</b> The AI covers the days between lessons and points to a live Zoom tutor for what it cannot fix.</li></ol></dd></div>
+          <div><dt>Stack</dt><dd>Laravel, OpenAI, SpeechSuper, Stripe and Zoom.</dd></div>
+        </dl>
+        
+        
+      </article>
+      <div class="cards"><article class="card" id="max">
+          <h4>Max</h4>
+          <p>An AI team member for an MSP: an agent that works across chat channels with real tools.</p>
+          <ul class="tags" aria-label="Topics"><li>ai</li><li>agents</li><li>langgraph</li><li>mcp</li><li>tools</li><li>chat</li><li>assistant</li></ul>
+          <details class="more">
+          <summary>6 more things in Max</summary>
+          <ul><li><b>Triage and draft</b><span>Triages a support email and drafts a reply for a person to check before it goes.</span></li><li><b>Reply leak check</b><span>Holds back any draft with an ID, amount or email that isn&#39;t that customer&#39;s.</span></li><li><b>Read-only tools</b><span>Lets Max look things up in business systems but blocks any tool that changes data.</span></li><li><b>One customer per run</b><span>Stops a run the moment a lookup reaches for another customer&#39;s records.</span></li><li><b>Ticket replay grading</b><span>Replays resolved tickets and grades Max&#39;s triage against what really happened.</span></li><li><b>Learning from edits</b><span>Records every change staff make to a draft as a candidate correction.</span></li></ul>
+        </details>
+        </article><article class="card" id="porto">
+          <h4>Porto</h4>
+          <p>A company assistant that answers questions about the product and its docs.</p>
+          <ul class="tags" aria-label="Topics"><li>ai</li><li>assistant</li><li>rag</li><li>llm</li><li>chat</li><li>docs</li></ul>
+          <details class="more">
+          <summary>7 more things in Porto</summary>
+          <ul><li><b>Answers with sources</b><span>Answers product questions from the published guides and lists its sources.</span></li><li><b>Confirm before change</b><span>Proposes issue changes on a card and makes them only when the person confirms.</span></li><li><b>Ask the codebase</b><span>Explains how the product&#39;s code works, citing files and lines at a named commit.</span></li><li><b>Coding sessions</b><span>Runs a coding agent on its own branch in an isolated instance, up to three at once.</span></li><li><b>Your own access</b><span>Reads the issue tracker and wiki with each person&#39;s own sign-in, not a shared one.</span></li><li><b>Morning briefing</b><span>Writes each person a short morning briefing with up to three things to start on.</span></li><li><b>Living mascot</b><span>Porto&#39;s face glances about, dozes when idle and hops when an answer is ready.</span></li></ul>
+        </details>
+        </article><article class="card" id="orkestra">
+          <h4>ORKESTRA</h4>
+          <p>A console for a team of single-purpose agents, starting with support triage, where a person approves anything risky.</p>
+          <ul class="tags" aria-label="Topics"><li>ai</li><li>agents</li><li>orchestration</li><li>automation</li><li>triage</li><li>guardrails</li><li>devtools</li></ul>
+          <details class="more">
+          <summary>6 more things in ORKESTRA</summary>
+          <ul><li><b>Support triage agent</b><span>Reads each new support ticket and returns priority, related issues and a draft reply.</span></li><li><b>Cited findings</b><span>Each triage finding cites the source line it came from, at the customer&#39;s version.</span></li><li><b>Priority floor</b><span>Never lets the agent lower a ticket&#39;s priority without flagging it for a person.</span></li><li><b>Redaction first</b><span>Removes secrets and personal details from tickets before any agent reads them.</span></li><li><b>Redaction canary tests</b><span>Measures redaction against 1,200 seeded documents and thousands of look-alikes.</span></li><li><b>Shadow mode</b><span>Posts triage cards to a private staff channel while the agent earns trust.</span></li></ul>
+        </details>
+        </article></div>
+    </div>
+    <div class="cluster" style="--c:#E08A3C">
+      <div class="cluster-head"><i aria-hidden="true"></i><h3>Platforms</h3><span>3</span></div>
+      <article class="case" id="multiportal">
+        <p class="eyebrow">Platforms · Case study</p>
+        <h4>MultiPortal</h4>
+        <p class="lead">A multi-tenant cloud platform where service providers run servers, networks and backups for their customers.</p>
+        <p class="kicker">The case study: one UI standard for the whole product, written for people and coding agents alike.</p>
+        <ul class="results"><li><strong>One</strong><span>standard across the product</span></li><li><strong>Any</strong><span>theme, light or dark</span></li><li><strong>Every</strong><span>change checked automatically</span></li></ul>
+        <dl class="sections">
+          <div><dt>Problem</dt><dd>The product grew screen by screen over years, and it showed: pages looked and behaved differently, custom brand colours could make text hard to read, and dark mode and translations were uneven. Coding agents copied whichever old page was nearest, spreading the inconsistency.</dd></div>
+          <div><dt>My role</dt><dd>I led it end to end: wrote the standard, built the kit and its checks, and moved the app onto it.</dd></div>
+          <div><dt>How it works</dt><dd>The standard lives in its own versioned kit: components, page templates and documentation with a live preview of each. Every guideline says what to build and which template to start from, and automated checks flag anything that breaks the rules.</dd></div>
+          <div><dt>Decisions</dt><dd><ol class="decisions"><li><b>Written for agents too.</b> Most UI code is now written with coding agents, so the guidelines are built for them as well: an index of the rules most often broken, and a step that loads the right page before any UI is written. The agent reads the rule instead of copying an old page.</li><li><b>Checks that block.</b> Automated checks run on every change, so drift is caught in review rather than by users.</li><li><b>Colour never carries meaning.</b> Brand colours are for the brand only. Status and warnings use fixed colours, so any theme, light or dark, stays readable.</li><li><b>Its own package.</b> Components, templates and guidelines ship as a versioned kit, instead of copies living inside the app.</li></ol></dd></div>
+          <div><dt>Stack</dt><dd>PHP and Bootstrap, with automated checks in CI.</dd></div>
+        </dl>
+        
+        <details class="more">
+          <summary>4 more things in MultiPortal</summary>
+          <ul><li><b>Multi-tenant quotas</b><span>Each customer gets limits on what it can use, and on what it hands out to its own customers.</span></li><li><b>Usage metering</b><span>Measures what every customer uses, so usage turns straight into a bill.</span></li><li><b>Alert integrations</b><span>Sends alerts to the chat and on-call apps a team already uses.</span></li><li><b>Single sign-on</b><span>People sign in through their company&#39;s identity provider.</span></li></ul>
+        </details>
+      </article>
+      <div class="cards"><article class="card" id="hostednetwork">
+          <h4>Hosted Network Tools</h4>
+          <p>Tools for managed service providers: service qualification and telco integrations.</p>
+          <ul class="tags" aria-label="Topics"><li>msp</li><li>telco</li><li>api</li><li>vue</li><li>integrations</li><li>backend</li></ul>
+          
+        </article><article class="card" id="freelance">
+          <h4>Freelance builds</h4>
+          <p>A patient management system, a dental clinic platform, e-commerce and a therapy booking app.</p>
+          <ul class="tags" aria-label="Topics"><li>laravel</li><li>php</li><li>payments</li><li>healthcare</li><li>ecommerce</li><li>booking</li></ul>
+          <details class="more">
+          <summary>7 more things in Freelance builds</summary>
+          <ul><li><b>Clinic Android app</b><span>An Android app for a clinic&#39;s patients, schedules, prescriptions and instalments.</span></li><li><b>Online dental booking</b><span>Patients book dental appointments online and get an email once staff approve.</span></li><li><b>Treatment payment links</b><span>Emails patients a link to pay for their treatment online through PayMongo.</span></li><li><b>Clinic appointment calendar</b><span>A calendar of a clinic&#39;s appointments, with today&#39;s list and patient photo records.</span></li><li><b>Online store checkout</b><span>Shoppers fill a cart, pay by GCash or card, and choose delivery or pickup.</span></li><li><b>Store back office</b><span>Tracks stock, purchases and sales, with an audit trail and one-click backups.</span></li><li><b>Port trip booking</b><span>Travellers book boat trips by route, add passengers and upload proof of payment.</span></li></ul>
+        </details>
+        </article></div>
+    </div>
+    <div class="cluster" style="--c:#4FD1C5">
+      <div class="cluster-head"><i aria-hidden="true"></i><h3>Quality</h3><span>2</span></div>
+      
+      <div class="cards"><article class="card" id="testhub">
+          <h4>TestHub</h4>
+          <p>An end-to-end testing platform: environments, runs and evidence.</p>
+          <ul class="tags" aria-label="Topics"><li>testing</li><li>e2e</li><li>playwright</li><li>ci</li><li>qa</li></ul>
+          <details class="more">
+          <summary>5 more things in TestHub</summary>
+          <ul><li><b>Test report parsers</b><span>Reads Codeception and Playwright reports into results, even when one is partial.</span></li><li><b>Stable test identity</b><span>Gives each test one identity across runs, so its history follows it.</span></li><li><b>Retry history</b><span>Keeps every attempt of a test that failed, flaked or ran more than once.</span></li><li><b>CI run polling</b><span>Watches GitHub for new workflow runs and branch heads in each registered repo.</span></li><li><b>Module boundary test</b><span>Fails the build when one part of the code reaches into another&#39;s internals.</span></li></ul>
+        </details>
+        </article><article class="card" id="verdict">
+          <h4>LawStack verdict</h4>
+          <p>Test results in one place: run history, flaky tests, screenshots and traces.</p>
+          <ul class="tags" aria-label="Topics"><li>testing</li><li>flaky</li><li>playwright</li><li>reporting</li><li>qa</li></ul>
+          <details class="more">
+          <summary>6 more things in LawStack verdict</summary>
+          <ul><li><b>Run upload API</b><span>Takes a test report with screenshots and traces from any CI in one HTTP call.</span></li><li><b>Flake rate ranking</b><span>Ranks tests by how often they failed across their last 50 runs.</span></li><li><b>Spec history timeline</b><span>Shows a test&#39;s recent passes and failures as dots, and flags when it flips.</span></li><li><b>Spec catalogue</b><span>A searchable list of every test seen across runs, each with its own history.</span></li><li><b>Run history filters</b><span>Filter past runs by outcome, branch or ticket key to find the one that broke.</span></li><li><b>Guided setup wizard</b><span>A step-by-step first-run setup that stores settings with secrets masked.</span></li></ul>
+        </details>
+        </article></div>
+    </div>
+    <div class="cluster" style="--c:#F2C14E">
+      <div class="cluster-head"><i aria-hidden="true"></i><h3>Interface</h3><span>1</span></div>
+      
+      <div class="cards"><article class="card" id="uikit">
+          <h4>UI kit</h4>
+          <p>A themeable design system: customer brand colours, dark mode and translations.</p>
+          <ul class="tags" aria-label="Topics"><li>design-system</li><li>ui</li><li>theming</li><li>dark-mode</li><li>translations</li><li>frontend</li></ul>
+          <details class="more">
+          <summary>5 more things in UI kit</summary>
+          <ul><li><b>Command palette</b><span>One keyboard shortcut to search everything and jump straight to it.</span></li><li><b>Dark mode brand colours</b><span>Lightens a customer&#39;s brand colours just enough to stay readable in dark mode.</span></li><li><b>Live component docs</b><span>A documentation site with a live preview of every component under any brand.</span></li><li><b>Agent guideline index</b><span>A machine-readable index of every guideline, so coding agents build to the standard.</span></li><li><b>Translated throughout</b><span>Every string translated, and the build fails if one is missing.</span></li></ul>
+        </details>
+        </article></div>
+    </div>
+    </section>
+
+    <section id="signal" class="signal">
+      <p class="eyebrow">05 · Signal</p>
+      <h2>Let&#39;s build something.</h2>
+      <p class="body">Remote, from the Philippines. Open to full-stack and AI engineering roles.</p>
+      <div class="actions">
+      <a class="btn primary" href="mailto:marklawrenzeb@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/lawrenze13" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/lawrenzem/" rel="noopener">LinkedIn</a>
+    </div>
+      <p class="email">marklawrenzeb@gmail.com</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 Lawrenze Maranan</p>
+    <p class="links"><a href="../">3D view</a><a href="../llms.txt">llms.txt</a><a href="../resume.json">resume.json</a></p>
+  </footer>
+  <div class="grain" aria-hidden="true"></div>
+</body>
+</html>
