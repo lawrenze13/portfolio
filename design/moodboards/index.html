@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #111214; --surface: #1A1C20; --line: #2A2D33; --text: #EDEEF0; --muted: #9A9EA6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding: 64px 40px; }
+  main { max-width: 1100px; margin: 0 auto; display: grid; gap: 32px; }
+  h1 { font-size: 36px; letter-spacing: -.01em; }
+  p { color: var(--muted); font-size: 17px; line-height: 1.6; max-width: 720px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  a.card { display: grid; gap: 10px; padding: 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--text); text-decoration: none; }
+  a.card:hover { border-color: var(--muted); }
+  .sw { display: flex; gap: 6px; } .sw i { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); }
+  .k { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
+  .t { font-size: 22px; font-weight: 700; }
+  @media (max-width: 760px) { body { padding: 40px 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Three directions for lawrenzem.space</h1>
+  <p>Each concept is a 3D world paired with its own look. The frames are 2D sketches of the Home screen; the real thing is 3D. Mix and match is fine: any world can take any look.</p>
+  <div class="grid">
+    <a class="card" href="a-latent-space.html">
+      <span class="k">Concept A · dark, luminous</span><span class="t">Latent Space</span>
+      <span class="sw"><i style="background:#07080C"></i><i style="background:#46E3FF"></i><i style="background:#8B5CFF"></i><i style="background:#5CFFB0"></i><i style="background:#FFB547"></i></span>
+      <p>Your work as an embedding you fly through. Ask the guide lights up the nearest points.</p>
+    </a>
+    <a class="card" href="b-the-line.html">
+      <span class="k">Concept B · light, editorial</span><span class="t">The Line</span>
+      <span class="sw"><i style="background:#F3F1EC"></i><i style="background:#141414"></i><i style="background:#FF5A1F"></i><i style="background:#2F5BFF"></i></span>
+      <p>Your career as a transit diorama. Ride the AI line and the Platform line; Plan my route is the AI guide.</p>
+    </a>
+    <a class="card" href="c-motherboard.html">
+      <span class="k">Concept C · retro, playful</span><span class="t">Motherboard City</span>
+      <span class="sw"><i style="background:#05110C"></i><i style="background:#0B2A1B"></i><i style="background:#7CFFA4"></i><i style="background:#E08A3C"></i></span>
+      <p>A circuit board you walk on. Projects are chips wired to an AI core; the terminal is the ask box.</p>
+    </a>
+  </div>
+</main>
+</body>
+</html>

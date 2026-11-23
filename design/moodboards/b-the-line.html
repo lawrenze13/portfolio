@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B · The Line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F3F1EC; --surface: #FFFFFF; --line: #DDD8CE; --text: #141414; --muted: #6B6E75;
+    --ai: #FF5A1F; --plat: #2F5BFF; --career: #141414;
+    --display-font: 'Instrument Serif', serif; --body-font: 'Inter', sans-serif; --mono-font: 'IBM Plex Mono', monospace;
+  }
+</style>
+<link rel="stylesheet" href="board.css">
+<style>
+  .frame { background: var(--bg); }
+  header { position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 28px 40px; z-index: 3; }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: var(--mono-font); font-size: 13px; color: var(--muted); }
+  .brand img { height: 32px; filter: brightness(0); }
+  .hud { display: flex; gap: 10px; }
+  .chip { font-family: var(--mono-font); font-size: 12px; color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; background: var(--surface); }
+  .hero { position: absolute; left: 40px; top: 120px; max-width: 520px; z-index: 3; }
+  .kicker { font-family: var(--mono-font); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: flex; gap: 10px; align-items: center; }
+  .kicker i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  h1 { font-family: var(--display-font); font-weight: 400; font-size: clamp(56px, 7.4vw, 112px); line-height: .9; letter-spacing: -.02em; margin: 18px 0 22px; }
+  h1 em { font-style: italic; color: var(--plat); }
+  .pitch { font-size: 18px; line-height: 1.55; color: #3A3D44; max-width: 440px; }
+  .cta { margin-top: 28px; display: flex; gap: 10px; }
+  .btn { font-family: var(--body-font); font-weight: 600; font-size: 14px; border-radius: 999px; padding: 12px 18px; border: 1.5px solid var(--text); background: var(--text); color: var(--bg); cursor: pointer; }
+  .btn.ghost { background: transparent; color: var(--text); }
+  .stage { position: absolute; right: 10px; top: 90px; width: 900px; height: 700px; perspective: 1800px; z-index: 1; }
+  .diorama { position: absolute; inset: 0; transform: rotateX(52deg) rotateZ(-24deg) translate(40px, -10px); transform-style: preserve-3d; }
+  .slab { position: absolute; inset: 0; background: #FBFAF7; border-radius: 28px; box-shadow: 0 2px 0 #E6E1D6, 0 4px 0 #E1DBCF, 0 6px 0 #DCD5C8, 0 8px 0 #D7CFC1, 0 10px 0 #D2CABB, 0 40px 80px rgba(20,20,20,.18); }
+  .diorama svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  nav.stops { position: absolute; left: 40px; right: 40px; bottom: 30px; display: flex; gap: 26px; align-items: center; font-family: var(--mono-font); font-size: 12px; letter-spacing: .08em; color: var(--muted); z-index: 3; }
+  nav.stops b { color: var(--text); }
+  nav.stops span::before, nav.stops b::before { content: ''; display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 2px solid currentColor; margin-right: 8px; vertical-align: -1px; background: var(--bg); }
+  nav.stops .keys { margin-left: auto; } nav.stops .keys::before { display: none; }
+  @keyframes ride { 0% { transform: translateX(-70px); } 100% { transform: translateX(70px); } }
+  .train { animation: ride 6s ease-in-out infinite alternate; }
+  @media (max-width: 760px) {
+    header { padding: 20px 16px; } .hud .chip:not(:last-child) { display: none; }
+    .hero { left: 16px; right: 16px; top: 90px; } .pitch { font-size: 16px; }
+    .stage { right: -420px; top: 360px; transform: scale(.6); transform-origin: top left; }
+    nav.stops { left: 16px; right: 16px; gap: 12px; overflow: hidden; } nav.stops .keys { display: none; }
+  }
+</style>
+</head>
+<body>
+<section class="frame">
+  <header>
+    <div class="brand"><img src="../../assets/img/logo.png" alt="LM logo">lawrenzem.space</div>
+    <div class="hud"><span class="chip">Sound off</span><span class="chip">Plain view</span></div>
+  </header>
+  <div class="hero">
+    <div class="kicker"><i style="background:var(--ai)"></i>AI line <i style="background:var(--plat)"></i>Platform line</div>
+    <h1>Lawrenze<br>Maranan,<br><em>next stop</em> AI.</h1>
+    <p class="pitch">Full-stack and AI engineer. Eight years on the line, from PHP platforms and multi-tenant cloud to agents in production. All aboard.</p>
+    <div class="cta"><button class="btn">Board the line</button><button class="btn ghost">Plan my route</button></div>
+  </div>
+  <div class="stage" aria-hidden="true">
+    <div class="diorama">
+      <div class="slab"></div>
+      <svg viewBox="0 0 1000 760">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ECE7DD" stroke-width="1"/></pattern>
+        </defs>
+        <rect x="0" y="0" width="1000" height="760" rx="28" fill="url(#grid)"/>
+        <!-- Career line (Path) -->
+        <path d="M80 680 H930" stroke="#141414" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <!-- Platform line -->
+        <path d="M100 200 H330 L570 440 H930" stroke="#2F5BFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- AI line -->
+        <path d="M100 560 H330 L570 320 H930" stroke="#FF5A1F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- Interchange: About -->
+        <rect x="478" y="350" width="64" height="60" rx="30" fill="#FFFFFF" stroke="#141414" stroke-width="5"/>
+        <g font-family="Inter" font-size="17" font-weight="600" fill="#141414">
+          <text x="466" y="386" text-anchor="end">Central · About me</text>
+        </g>
+        <g id="stations" font-family="Inter" font-size="15" font-weight="500" fill="#141414"></g>
+        <!-- Train on the AI line, with you in the cab -->
+        <g class="train">
+          <g transform="translate(660 320)">
+            <rect x="-58" y="-17" width="116" height="34" rx="12" fill="#141414"/>
+            <rect x="-48" y="-9" width="18" height="12" rx="3" fill="#FFD9C9"/>
+            <rect x="-24" y="-9" width="18" height="12" rx="3" fill="#FFD9C9"/>
+            <rect x="0" y="-9" width="18" height="12" rx="3" fill="#FFD9C9"/>
+            <rect x="24" y="-9" width="26" height="12" rx="3" fill="#FF5A1F"/>
+            <circle cx="37" cy="-3" r="4" fill="#141414"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <nav class="stops"><b>Home</b><span>About</span><span>The line</span><span>Projects</span><span>Terminus</span><span class="keys">← → · 1–5 · ? controls</span></nav>
+</section>
+
+<main class="board">
+  <a class="back" href="index.html">← all concepts</a>
+  <div>
+    <h3>Concept B</h3>
+    <h2>The Line: your career as a transit map you can ride</h2>
+  </div>
+  <div class="cols">
+    <div>
+      <h3>The idea</h3>
+      <p>A tabletop diorama of a transit network. <strong>The AI line</strong> and <strong>the Platform line</strong> cross at Central (About me); a black career line runs 2018 → now. Each station is a project. You drive the train; the camera rides along.</p>
+    </div>
+    <div>
+      <h3>The five stops</h3>
+      <ul>
+        <li><b>Home</b>the whole map, tilted, a train passing</li>
+        <li><b>About</b>Central interchange, your station</li>
+        <li><b>The line</b>ride the career line, one station per job</li>
+        <li><b>Projects</b>ride either line; stations open into case studies</li>
+        <li><b>Terminus</b>contact, with a ticket to take away (your CV)</li>
+      </ul>
+    </div>
+    <div>
+      <h3>How it shows AI engineering</h3>
+      <p><strong>"Plan my route" is Ask the guide.</strong> A visitor types what they're hiring for; the guide plans a route through the stations that match, explains each stop, and the train rides it.</p>
+    </div>
+  </div>
+  <div>
+    <h3>Palette</h3>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#F3F1EC"></i><span><b>Paper</b>#F3F1EC</span></div>
+      <div class="swatch"><i style="background:#141414"></i><span><b>Ink</b>#141414</span></div>
+      <div class="swatch"><i style="background:#FF5A1F"></i><span><b>AI line</b>#FF5A1F</span></div>
+      <div class="swatch"><i style="background:#2F5BFF"></i><span><b>Platform line</b>#2F5BFF</span></div>
+      <div class="swatch"><i style="background:#DDD8CE"></i><span><b>Card stock</b>#DDD8CE</span></div>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="type-specimen">
+      <h3>Type</h3>
+      <div class="d">Instrument Serif</div>
+      <div class="b">Inter for body and station names: plain, signage-like.</div>
+      <div class="m">IBM Plex Mono for times, keys and tickets · 2018 → now</div>
+    </div>
+    <div>
+      <h3>UI pieces</h3>
+      <div class="ui-row"><button class="btn">Board the line</button><button class="btn ghost">Plain view</button><span class="chip">Next: LawStack aiops</span></div>
+    </div>
+  </div>
+  <div>
+    <h3>Trade-offs</h3>
+    <div class="tradeoffs">
+      <div><b>3D build</b><span>Medium: a terrain slab, track, stations and a train. All simple shapes.</span></div>
+      <div><b>AI story</b><span>Good, through Plan my route; the world itself isn't AI-themed.</span></div>
+      <div><b>Readability</b><span>Best of the three: everyone can read a transit map.</span></div>
+      <div><b>Stands out</b><span>Light and editorial, against a sea of dark developer sites.</span></div>
+    </div>
+  </div>
+</main>
+
+<script>
+  const NS = 'http://www.w3.org/2000/svg';
+  const host = document.getElementById('stations');
+  const st = (x, y, label, colour, dy = -24) => {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 11);
+    c.setAttribute('fill', '#FFFFFF'); c.setAttribute('stroke', colour); c.setAttribute('stroke-width', 5);
+    host.appendChild(c);
+    const t = document.createElementNS(NS, 'text');
+    t.setAttribute('x', x); t.setAttribute('y', y + dy); t.setAttribute('text-anchor', 'middle');
+    t.textContent = label; host.appendChild(t);
+  };
+  // Platform line
+  st(160, 200, 'MultiPortal', '#2F5BFF'); st(290, 200, 'Hosted Network', '#2F5BFF'); st(390, 260, 'UI kit', '#2F5BFF', -22);
+  st(690, 440, 'TestHub', '#2F5BFF', 36); st(800, 440, 'verdict', '#2F5BFF', 36); st(920, 440, 'Freelance', '#2F5BFF', 36);
+  // AI line
+  st(150, 560, 'VIPTutors AI', '#FF5A1F', 36); st(270, 560, 'Porto', '#FF5A1F', 36); st(390, 500, 'Max', '#FF5A1F', 36);
+  st(820, 320, 'ORKESTRA', '#FF5A1F'); st(930, 320, 'LawStack aiops', '#FF5A1F');
+  // Career line
+  [[110, '2018'], [240, '2018'], [370, '2018'], [500, '2019'], [630, '2021'], [760, '2023'], [900, 'Now']].forEach(([x, y]) => st(x, 680, y, '#141414', 36));
+</script>
+</body>
+</html>

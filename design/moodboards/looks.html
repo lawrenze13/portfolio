@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Render looks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #05110C; --surface: #0A1C14; --line: #1A3A2A; --text: #D6F5DE; --muted: #7FA88F; --ai: #7CFFA4; --on-accent: #05110C; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font: 17px/1.6 'Hanken Grotesk', sans-serif; padding: 64px 40px 120px; }
+  main { max-width: 1240px; margin: 0 auto; display: grid; gap: 72px; }
+  h1, h2 { font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.03em; line-height: 1.05; }
+  h1 { font-size: 44px; }
+  h2 { font-size: 32px; }
+  p { color: var(--muted); max-width: 720px; }
+  .intro { display: grid; gap: 14px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; }
+  .jump a, .live { font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 999px; padding: 8px 14px; }
+  .jump a { color: var(--text); border: 1px solid var(--line); }
+  .jump a:hover { border-color: var(--muted); }
+  section { display: grid; gap: 18px; }
+  .head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .k { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ai); }
+  .live { background: var(--ai); color: var(--on-accent); }
+  .shots { display: grid; grid-template-columns: 1fr 1fr 0.42fr; gap: 12px; align-items: start; }
+  figure { display: grid; gap: 6px; }
+  figure img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 10px; }
+  figcaption { font-size: 13px; color: var(--muted); }
+  @media (max-width: 900px) {
+    body { padding: 40px 16px 80px; }
+    h1 { font-size: 34px; }
+    .shots { grid-template-columns: 1fr 1fr; }
+    .shots figure:first-child { grid-column: 1 / -1; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="intro">
+    <p class="k">Portfolio · render options</p>
+    <h1>Four looks for the same sky</h1>
+    <p>Same stars, same content, same behaviour: only the rendering changes. The stills are a first impression; open each one live to see it move, and press <strong>L</strong> there to flip between them.</p>
+    <div class="jump">
+      <a href="#sky">Night sky</a><a href="#atlas">Star atlas</a><a href="#deep">Deep field</a><a href="#chart">Chart</a>
+    </div>
+  </div>
+
+  <section id="sky">
+    <div class="head"><div><p class="k">A · current</p><h2>Night sky</h2></div><a class="live" href="http://localhost:4318/?look=sky">Open live</a></div>
+    <p>Real stars in soft colour, thin star-chart lines that stop short of each star, and a gentle glow. Closest to what you saw last.</p>
+    <div class="shots">
+      <figure><img src="looks/sky-desk-home.png" alt="Night sky look, Home on desktop" loading="lazy"><figcaption>Home</figcaption></figure>
+      <figure><img src="looks/sky-desk-work.png" alt="Night sky look, Work on desktop" loading="lazy"><figcaption>Work</figcaption></figure>
+      <figure><img src="looks/sky-phone-home.png" alt="Night sky look, Home on a phone" loading="lazy"><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="atlas">
+    <div class="head"><div><p class="k">B · calm, scientific</p><h2>Star atlas</h2></div><a class="live" href="http://localhost:4318/?look=atlas">Open live</a></div>
+    <p>An observatory chart: white stars, a faint grid of the sky, dashed constellation lines and no glow. Cluster colour lives only in the labels and the selection ring.</p>
+    <div class="shots">
+      <figure><img src="looks/atlas-desk-home.png" alt="Star atlas look, Home on desktop" loading="lazy"><figcaption>Home</figcaption></figure>
+      <figure><img src="looks/atlas-desk-work.png" alt="Star atlas look, Work on desktop" loading="lazy"><figcaption>Work</figcaption></figure>
+      <figure><img src="looks/atlas-phone-home.png" alt="Star atlas look, Home on a phone" loading="lazy"><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="deep">
+    <div class="head"><div><p class="k">C · cinematic</p><h2>Deep field</h2></div><a class="live" href="http://localhost:4318/?look=deep">Open live</a></div>
+    <p>A telescope photograph: near-black space, diffraction spikes on the bright stars, and faint coloured nebulae behind each cluster. The richest of the four.</p>
+    <div class="shots">
+      <figure><img src="looks/deep-desk-home.png" alt="Deep field look, Home on desktop" loading="lazy"><figcaption>Home</figcaption></figure>
+      <figure><img src="looks/deep-desk-work.png" alt="Deep field look, Work on desktop" loading="lazy"><figcaption>Work</figcaption></figure>
+      <figure><img src="looks/deep-phone-home.png" alt="Deep field look, Home on a phone" loading="lazy"><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="chart">
+    <div class="head"><div><p class="k">D · flat, graphic</p><h2>Chart</h2></div><a class="live" href="http://localhost:4318/?look=chart">Open live</a></div>
+    <p>A diagram rather than a photograph: crisp dots, solid lines, ringed markers for the projects and no glow at all. The most legible, the least "space".</p>
+    <div class="shots">
+      <figure><img src="looks/chart-desk-home.png" alt="Chart look, Home on desktop" loading="lazy"><figcaption>Home</figcaption></figure>
+      <figure><img src="looks/chart-desk-work.png" alt="Chart look, Work on desktop" loading="lazy"><figcaption>Work</figcaption></figure>
+      <figure><img src="looks/chart-phone-home.png" alt="Chart look, Home on a phone" loading="lazy"><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+</main>
+</body>
+</html>
