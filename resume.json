@@ -25,8 +25,8 @@
   "work": [
     {
       "name": "MultiPortal",
-      "position": "Full-Stack & AI Engineer",
-      "summary": "A multi-tenant cloud platform: product features end to end, the design system behind every screen, and the team's AI tools."
+      "position": "Full-Stack Engineer",
+      "summary": "Full-stack engineering across the product."
     },
     {
       "name": "Hosted Network",
@@ -150,26 +150,6 @@
         "devtools"
       ],
       "url": "https://lawrenzem.space/plain/#orkestra"
-    },
-    {
-      "name": "MultiPortal",
-      "description": "A multi-tenant cloud platform where service providers run servers, networks and backups for their customers.",
-      "highlights": [
-        "One standard across the product",
-        "Any theme, light or dark",
-        "Every change checked automatically"
-      ],
-      "keywords": [
-        "cloud",
-        "multi-tenant",
-        "php",
-        "api",
-        "saas",
-        "backend",
-        "design system",
-        "ui kit"
-      ],
-      "url": "https://lawrenzem.space/plain/#multiportal"
     },
     {
       "name": "Hosted Network Tools",

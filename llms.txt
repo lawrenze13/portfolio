@@ -10,7 +10,6 @@ Most of my backend work is in PHP frameworks; on the front end, modern JavaScrip
 
 - [LawStack aiops](https://lawrenzem.space/plain/#aiops): An operator console that takes Jira tickets to pull requests, one AI agent per lane. 100+ tickets taken to a pull request; < 1 hr typical ticket to PR, down from hours; Daily still the way we work.
 - [VIPTutors AI Suite](https://lawrenzem.space/plain/#viptutors): AI learning apps for speech practice, interview prep and writing, with payments and live tutoring. 3 AI learning apps; < 6 mo built end to end; 1 platform for accounts, payments and tutoring.
-- [MultiPortal](https://lawrenzem.space/plain/#multiportal): A multi-tenant cloud platform where service providers run servers, networks and backups for their customers. One standard across the product; Any theme, light or dark; Every change checked automatically.
 
 ## Other work
 
@@ -32,7 +31,7 @@ Most of my backend work is in PHP frameworks; on the front end, modern JavaScrip
 - 2021: Cognitif Incorporated, QA Engineer. End-to-end testing with Selenium and xUnit; GitLab CI/CD; Power BI reporting.
 - 2023: VIPTutors Co., Mid Full Stack Engineer. AI learning apps with OpenAI and SpeechSuper; Stripe payments and Zoom tutoring.
 - Now: Hosted Network, Full-Stack & AI Engineer. Internal tools for managed service providers: internet service qualification, telco integrations, and Max, an AI team member.
-- Now: MultiPortal, Full-Stack & AI Engineer. A multi-tenant cloud platform: product features end to end, the design system behind every screen, and the team's AI tools.
+- Now: MultiPortal, Full-Stack Engineer. Full-stack engineering across the product.
 
 ## Contact
 
