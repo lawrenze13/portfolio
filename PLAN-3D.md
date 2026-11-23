@@ -129,9 +129,23 @@ States: reduced motion (cut, don't fly; no orbit), no WebGL (plain view), deep l
    with noise (read as white noise) and a noise rush on each flight. The 3D is its own
    chunk, so the text shows after 87 KB (gzip) while three.js (300 KB) arrives; if the 3D fails
    to load, the text and menu keep working. The build carries `CNAME`, `.nojekyll` and a
-   `404.html`; the dev hooks are dev-only and absent from it. Left: the content review, then
-   the deploy method (recommended: the built files on a `gh-pages` branch with Pages switched
-   to it, so no workflow is needed).
+   `404.html`; the dev hooks are dev-only and absent from it. *Live since 23 Nov 2026*: Pages
+   serves the `gh-pages` branch (built files only), HTTPS enforced. The old site is still on
+   `main` but no longer served; switching the Pages source back to `main` restores it.
+   Still open: the content review (case studies and stars).
+
+## Publishing
+
+Pages serves the `gh-pages` branch as plain files, so a change goes live by building and
+committing the output there (no workflow needed):
+
+```sh
+cd 3d && npm run build && npm run check-ask
+git worktree add --detach /tmp/site && cd /tmp/site && git checkout gh-pages
+git rm -rq . && cp -a ../path/to/3d/dist/. . && git add -A
+git commit -m "Publish the site" && git push   # Pages rebuilds in about a minute
+cd - && git worktree remove /tmp/site
+```
 
 ## Fixes carried over from the audit of the old site
 
