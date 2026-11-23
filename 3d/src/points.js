@@ -40,11 +40,6 @@ export const POINTS = [
   ai('max', 'Ticket replay grading', "Replays resolved tickets and grades Max's triage against what really happened."),
   ai('max', 'Learning from edits', 'Records every change staff make to a draft as a candidate correction.'),
 
-  // MultiPortal features (employer): general, and only what shows an edge
-  pf('multiportal', 'Multi-tenant quotas', 'Each customer gets limits on what it can use, and on what it hands out to its own customers.'),
-  pf('multiportal', 'Usage metering', 'Measures what every customer uses, so usage turns straight into a bill.'),
-  pf('multiportal', 'Alert integrations', 'Sends alerts to the chat and on-call apps a team already uses.'),
-  pf('multiportal', 'Single sign-on', "People sign in through their company's identity provider."),
   // Freelance (personal)
   pf('freelance', 'Clinic Android app', "An Android app for a clinic's patients, schedules, prescriptions and instalments."),
   pf('freelance', 'Online dental booking', 'Patients book dental appointments online and get an email once staff approve.'),

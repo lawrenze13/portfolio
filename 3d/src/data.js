@@ -12,7 +12,6 @@ export const INTRO = {
   description: 'Full-stack and AI engineer. Eight years building software, and now the AI that runs inside it.',
 }
 
-export const WORK_HEADING = "Eleven things I've built"
 
 export const PALETTE = {
   bg: '#05110C',
@@ -78,24 +77,6 @@ export const PROJECTS = [
   { id: 'orkestra', name: 'ORKESTRA', cluster: 'ai',
     blurb: 'A console for a team of single-purpose agents, starting with support triage, where a person approves anything risky.',
     tags: ['ai', 'agents', 'orchestration', 'automation', 'triage', 'guardrails', 'devtools'] },
-  { id: 'multiportal', name: 'MultiPortal', cluster: 'platform', featured: true,
-    blurb: 'A multi-tenant cloud platform where service providers run servers, networks and backups for their customers.',
-    tags: ['cloud', 'multi-tenant', 'php', 'api', 'saas', 'backend', 'design system', 'ui kit'],
-    story: {
-      kicker: 'The case study: one UI standard for the whole product, written for people and coding agents alike.',
-      problem: 'The product grew screen by screen over years, and it showed: pages looked and behaved differently, custom brand colours could make text hard to read, and dark mode and translations were uneven. Coding agents copied whichever old page was nearest, spreading the inconsistency.',
-      role: 'I led it end to end: wrote the standard, built the kit and its checks, and moved the app onto it.',
-      how: 'The standard lives in its own versioned kit: components, page templates and documentation with a live preview of each. Every guideline says what to build and which template to start from, and automated checks flag anything that breaks the rules.',
-      decisions: [
-        ['Written for agents too', 'Most UI code is now written with coding agents, so the guidelines are built for them as well: an index of the rules most often broken, and a step that loads the right page before any UI is written. The agent reads the rule instead of copying an old page.'],
-        ['Checks that block', 'Automated checks run on every change, so drift is caught in review rather than by users.'],
-        ['Colour never carries meaning', 'Brand colours are for the brand only. Status and warnings use fixed colours, so any theme, light or dark, stays readable.'],
-        ['Its own package', 'Components, templates and guidelines ship as a versioned kit, instead of copies living inside the app.'],
-      ],
-      result: [['One', 'standard across the product'], ['Any', 'theme, light or dark'], ['Every', 'change checked automatically']],
-      stack: 'PHP and Bootstrap, with automated checks in CI.',
-      media: 'Short walkthrough: one page in light, dark and a custom theme (test data)',
-    } },
   { id: 'hostednetwork', name: 'Hosted Network Tools', cluster: 'platform',
     blurb: 'Tools for managed service providers: service qualification and telco integrations.',
     tags: ['msp', 'telco', 'api', 'vue', 'integrations', 'backend'] },
@@ -114,6 +95,10 @@ export const PROJECTS = [
 ]
 
 // Oldest first: scrolling down the Path walks from the first job to now.
+const COUNT = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve']
+export const countWord = (n) => COUNT[n] || String(n)
+export const WORK_HEADING = `${countWord(PROJECTS.length)} things I've built`
+
 export const JOBS = [
   { company: 'Bats. City Gov ITSD / IM Digital', role: 'IT on-the-job training', when: '2018',
     text: 'PC diagnostics, LAN and VLAN set-up, and web development fundamentals.' },
@@ -129,8 +114,8 @@ export const JOBS = [
     text: 'AI learning apps with OpenAI and SpeechSuper; Stripe payments and Zoom tutoring.' },
   { company: 'Hosted Network', role: 'Full-Stack & AI Engineer', when: 'Now',
     text: 'Internal tools for managed service providers: internet service qualification, telco integrations, and Max, an AI team member.' },
-  { company: 'MultiPortal', role: 'Full-Stack & AI Engineer', when: 'Now',
-    text: 'A multi-tenant cloud platform: product features end to end, the design system behind every screen, and the team\'s AI tools.' },
+  { company: 'MultiPortal', role: 'Full-Stack Engineer', when: 'Now',
+    text: 'Full-stack engineering across the product.' },
 ]
 
 export const ABOUT = {

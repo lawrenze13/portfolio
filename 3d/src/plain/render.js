@@ -2,7 +2,7 @@
 // JavaScript or WebGL, for phones, recruiters and search engines. Also renders
 // llms.txt, resume.json and the head tags both pages share. Run by the
 // plain-view plugin in vite.config.js, in dev and at build time.
-import { ABOUT, CLUSTERS, CONTACT, INTRO, JOBS, PROJECTS, SITE_URL, SKILLS, WORK_HEADING } from '../data.js'
+import { ABOUT, CLUSTERS, CONTACT, INTRO, JOBS, PROJECTS, SITE_URL, SKILLS, WORK_HEADING, countWord } from '../data.js'
 import { POINTS } from '../points.js'
 import { CSS } from './styles.js'
 
@@ -184,7 +184,7 @@ export function renderPlain() {
     <section id="work">
       <p class="eyebrow">04 · Work</p>
       <h2>${esc(WORK_HEADING)}</h2>
-      <p class="body">Three in depth, the rest in short. Open any of them for the smaller things inside.</p>
+      <p class="body">${countWord(PROJECTS.filter((p) => p.story).length)} in depth, the rest in short. Open any of them for the smaller things inside.</p>
       ${Object.entries(CLUSTERS).map(cluster).join('\n    ')}
     </section>
 

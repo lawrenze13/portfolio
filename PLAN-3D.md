@@ -16,7 +16,7 @@ version of me guides the visitor, and asking a question lights up the closest wo
 | Me | Low-poly 3D avatar (AI image-to-3D from my illustration, cleaned up in Blender), guiding between stops |
 | Ask | "Ask the guide": a question lights the nearest points with match scores; the camera flies to the best match |
 | Sound | On by default (starts at the first click, tap or key press), toggle; turning it off is remembered |
-| Write-ups | Full case study for the top 3, short card for the rest |
+| Write-ups | Full case study for LawStack aiops and VIPTutors, short card for the rest. MultiPortal is a Path job only: no project, case study, stars or specific details (23 Nov) |
 | Plain view | A new 2D site in the same identity (not the old site) |
 | Positioning | Full-Stack & AI Engineer |
 | Carry-over | Logo, avatar illustration and copy are raw material, nothing is locked |
@@ -64,7 +64,7 @@ Labels, numbers and scores use the body font with tabular figures, not a monospa
 | Cluster | Points (★ = full case study) |
 |---|---|
 | AI & agents | ★ LawStack aiops, ★ VIPTutors AI Suite, Max, Porto, ORKESTRA |
-| Platforms | ★ MultiPortal, Hosted Network Tools, Freelance builds |
+| Platforms | Hosted Network Tools, Freelance builds |
 | Quality | TestHub, LawStack verdict |
 | Interface | UI kit |
 
@@ -115,7 +115,7 @@ States: reduced motion (cut, don't fly; no orbit), no WebGL (plain view), deep l
 2. **Look**: bloom, point sprites, subtle grain, final type pairing, motion polish. *Done:
    remaining polish (sound, bundle splitting) moves to Ship.*
 3. **Guide**: a comet that flies to what each stop is about (replaced the avatar). *Done.*
-4. **Content**: three full case studies (interviews), short cards, every filler point made
+4. **Content**: two full case studies (interviews; MultiPortal's was dropped), short cards, every filler point made
    real (drafted, then reviewed), About facts, final copy.
 5. **Plain view**: the 2D site in the same identity; meta, Open Graph, `/llms.txt`,
    `resume.json`. *Done.*
