@@ -10,6 +10,9 @@ export const INTRO = {
   lead: 'Eight years building software, and now the AI that runs inside it.',
   cloud: "Every point out there is something I've shipped, placed by what it's about.",
   description: 'Full-stack and AI engineer. Eight years building software, and now the AI that runs inside it.',
+  // The plain view's own title and description, so the two pages don't compete in search.
+  plainTitle: 'Lawrenze Maranan · Portfolio and CV',
+  plainDescription: 'Case studies, projects and eight years of experience from Lawrenze Maranan, a full-stack and AI engineer working remotely from the Philippines.',
 }
 
 

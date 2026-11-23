@@ -12,38 +12,44 @@ const NAV = [['about', 'About'], ['path', 'Path'], ['work', 'Work'], ['signal', 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600&display=swap'
 const OG_IMAGE = `${SITE_URL}/og.jpg`
 
-// Meta, link preview and fonts, shared by the 3D page (/) and the plain view (/plain/).
-export function headTags({ path, icon }) {
-  const title = `${INTRO.name} · ${INTRO.title}`
+// Meta, link preview, icons and fonts, shared by the 3D page (/) and the plain
+// view (/plain/). `root` is the way back to the site root from the page.
+export function headTags({ path, root, title = `${INTRO.name} · ${INTRO.title}`, description = INTRO.description }) {
   const person = {
-    '@context': 'https://schema.org',
     '@type': 'Person',
     name: INTRO.name,
     jobTitle: INTRO.title,
+    description: INTRO.description,
     url: SITE_URL + '/',
     email: 'mailto:' + CONTACT.email,
     sameAs: [CONTACT.github, CONTACT.linkedin],
+    knowsAbout: SKILLS.flatMap((s) => s.keywords),
     address: { '@type': 'PostalAddress', addressCountry: 'PH' },
   }
+  // On the home page, also name the site: search engines use it for the site name in results.
+  const site = { '@type': 'WebSite', name: INTRO.name, alternateName: 'lawrenzem.space', url: SITE_URL + '/' }
+  const data = { '@context': 'https://schema.org', '@graph': path === '/' ? [person, site] : [person] }
   return `<title>${esc(title)}</title>
-  <meta name="description" content="${esc(INTRO.description)}">
+  <meta name="description" content="${esc(description)}">
   <link rel="canonical" href="${SITE_URL}${path}">
   <meta name="theme-color" content="#05110C">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="lawrenzem.space">
   <meta property="og:title" content="${esc(title)}">
-  <meta property="og:description" content="${esc(INTRO.description)}">
+  <meta property="og:description" content="${esc(description)}">
   <meta property="og:url" content="${SITE_URL}${path}">
   <meta property="og:image" content="${OG_IMAGE}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="${esc(INTRO.name)}, ${esc(INTRO.title)}: a field of stars, one for each thing built.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="${icon}">
+  <link rel="icon" href="${root}favicon.ico" sizes="48x48">
+  <link rel="icon" href="${root}icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="${root}apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="${FONTS}" rel="stylesheet">
-  <script type="application/ld+json">${JSON.stringify(person).replace(/</g, '\\u003c')}</script>`
+  <script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`
 }
 
 // A still sky behind the page: the same seeded stars every build.
@@ -145,7 +151,7 @@ export function renderPlain() {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  ${headTags({ path: '/plain/', icon: '../logo.png' })}
+  ${headTags({ path: '/plain/', root: '../', title: INTRO.plainTitle, description: INTRO.plainDescription })}
   <style>${CSS}</style>
 </head>
 <body>
@@ -217,7 +223,8 @@ export function render404() {
   <title>Not found · lawrenzem.space</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#05110C">
-  <link rel="icon" href="/logo.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="${FONTS}" rel="stylesheet">
@@ -242,6 +249,17 @@ export function render404() {
   <div class="grain" aria-hidden="true"></div>
 </body>
 </html>
+`
+}
+
+// The sitemap, dated the day the site is built.
+export function renderSitemap(date = new Date().toISOString().slice(0, 10)) {
+  const url = (path) => `  <url><loc>${SITE_URL}${path}</loc><lastmod>${date}</lastmod></url>`
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${url('/')}
+${url('/plain/')}
+</urlset>
 `
 }
 

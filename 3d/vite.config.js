@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
-// The plain view (/plain/), llms.txt and resume.json are rendered from the same
+// The plain view (/plain/), llms.txt, resume.json, the sitemap and the 404 page are rendered from the same
 // data as the 3D: served live in dev, written into dist at build time. The 3D
 // page gets the same head tags (description, link preview, structured data).
 function plainView() {
@@ -12,6 +12,7 @@ function plainView() {
     'llms.txt': ['text/plain; charset=utf-8', (m) => m.renderLlms()],
     'resume.json': ['application/json; charset=utf-8', (m) => m.renderResume()],
     '404.html': ['text/html; charset=utf-8', (m) => m.render404()],
+    'sitemap.xml': ['application/xml; charset=utf-8', (m) => m.renderSitemap()],
   }
   let server
   const load = () => server
@@ -39,7 +40,7 @@ function plainView() {
       })
     },
     async transformIndexHtml(html) {
-      return html.replace('<!-- head -->', (await load()).headTags({ path: '/', icon: './logo.png' }))
+      return html.replace('<!-- head -->', (await load()).headTags({ path: '/', root: './' }))
     },
     async generateBundle() {
       const m = await load()
